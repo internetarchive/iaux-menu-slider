@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ia-menu-slider</title>
+  <style>
+    :root {
+      --menuSliderBg: #151515;
+      --primaryTextColor: #fff;
+      --menuWidth: 320px;
+      --animationTiming: .25s;
+      --iconFillColor: #fff;
+      --iconStrokeColor: #fff;
+      --activeButtonBg: #282828;
+    }
+
+    html {
+      font: normal 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    main {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 1.5rem;
+    }
+
+    section {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <button>Toggle menu</button>
+    </header>
+    <section>
+    </section>
+  </main>
+
+  <script type="module">
+    import { render } from 'lit-html';
+    import { html, css, LitElement } from 'lit-element';
+    import '@internetarchive/ia-icons';
+    import '../ia-menu-slider.js';
+
+    class MenuContent extends LitElement {
+      static get styles() {
+        return css`
+          :host {
+            display: block;
+            padding: 1.5rem 1rem;
+          }
+
+          h1 {
+            padding: 0 .5rem;
+            margin-top: 0;
+          }
+
+          ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+          }
+
+          a {
+            display: block;
+            padding: .5rem;
+            color: var(--primaryTextColor);
+            text-decoration: none;
+          }
+
+          a:hover {
+            background: var(--menuSliderBg);
+          }
+        `;
+      }
+
+      static get properties() {
+        return {
+          title: { type: String },
+          items: { type: Array },
+        };
+      }
+
+      item(text) {
+        return html`<li><a href="#">${text}</a></li>`;
+      }
+
+      render() {
+        return html`
+          <h1>${this.title}</h1>
+          <ul>
+            ${this.items.map(this.item)}
+          </ul>
+        `;
+      }
+    }
+
+    customElements.define('menu-content', MenuContent);
+
+    const menuSlider = document.createElement('ia-menu-slider');
+    menuSlider.menus = [{
+      icon: html`
+        <ia-icon icon="audio"></ia-icon>
+      `,
+      label: 'Audio',
+      id: 'audio',
+      component: html`
+        <menu-content
+          .title=${"Audio menu"}
+          .items=${[1, 2, 3, 4].map((i) => 'Song ' + i)}
+        ></menu-content>
+      `
+    }, {
+      icon: html`
+        <ia-icon icon="software"></ia-icon>
+      `,
+      label: 'Software',
+      id: 'software',
+      component: html`
+        <menu-content
+          .title=${"Software menu"}
+          .items=${[1, 2, 3, 4, 5, 6].map((i) => 'CD-ROM ' + i)}
+        ></menu-content>
+      `
+    }, {
+      icon: html`
+        <ia-icon icon="donate" style="--iconFillColor: #f00"></ia-icon>
+      `,
+      label: 'Donate',
+      id: 'donate',
+      followable: true,
+      href: '#'
+    }];
+
+    document.querySelector('section').appendChild(menuSlider);
+
+    document.querySelector('button').addEventListener('click', () => {
+      menuSlider.open = !menuSlider.open;
+    });
+  </script>
+</body>
+</html>
