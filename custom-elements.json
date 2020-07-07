@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "tags": [
+    {
+      "name": "ia-menu-slider",
+      "description": "Menu slider used in ia-topnav",
+      "properties": [
+        {
+          "name": "menus",
+          "type": "Array",
+          "description": "An array of menu items and their corresponding component to render when the menu item is selected",
+          "default": "[]"
+        },
+        {
+          "name": "open",
+          "type": "Boolean",
+          "description": "Toggles open (visible) state of the `.menu` element",
+          "default": "false"
+        },
+        {
+          "name": "selected",
+          "type": "String",
+          "description": "Menu item ID property of the currently selected menu item",
+          "default": "''"
+        }
+      ],
+      "events": [],
+      "slots": [],
+      "cssProperties": [
+        {
+          "name": "--menuWidth",
+          "description": "Menu width",
+          "type": "Length"
+        },
+        {
+          "name": "--primaryTextColor",
+          "description": "Text color",
+          "type": "Color"
+        },
+        {
+          "name": "--menuSliderBg",
+          "description": "Menu background color",
+          "type": "Color"
+        }, {
+          "name": "--animationTiming",
+          "description": "Duration of menu animation",
+          "type": "Time"
+        },
+        {
+          "name": "--activeButtonBg",
+          "description": "Active menu item background",
+          "type": "Color"
+        }
+      ]
+    }
+  ]
+}
