@@ -14,7 +14,7 @@ yarn add @internetarchive/ia-menu-slider
 ## Usage
 ```html
 <script type="module">
-  import 'ia-menu-slider/ia-menu-slider.js';
+  import '@internetarchive/ia-menu-slider/ia-menu-slider.js';
 </script>
 
 <ia-menu-slider></ia-menu-slider>
