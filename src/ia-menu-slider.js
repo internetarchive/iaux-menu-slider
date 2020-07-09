@@ -11,7 +11,7 @@ export class IAMenuSlider extends LitElement {
     return {
       menus: { type: Array },
       open: { type: Boolean },
-      selected: { type: String },
+      selectedMenu: { type: String },
     };
   }
 
@@ -20,12 +20,12 @@ export class IAMenuSlider extends LitElement {
 
     this.menus = [];
     this.open = false;
-    this.selected = '';
+    this.selectedMenu = '';
   }
 
   setSelectedMenu({ detail }) {
     const { id } = detail;
-    this.selected = this.selected === id ? '' : id;
+    this.selectedMenu = this.selectedMenu === id ? '' : id;
   }
 
   get menuItems() {
@@ -37,7 +37,7 @@ export class IAMenuSlider extends LitElement {
             .icon=${menu.icon}
             .label=${menu.label}
             .id=${menu.id}
-            .selected=${menu.id === this.selected}
+            .selected=${menu.id === this.selectedMenu}
             .followable=${menu.followable}
             .href=${menu.href}
           ></menu-button>
@@ -46,8 +46,8 @@ export class IAMenuSlider extends LitElement {
     ));
   }
 
-  get selectedMenu() {
-    const menuItem = this.menus.find(menu => menu.id === this.selected);
+  get selectedMenuComponent() {
+    const menuItem = this.menus.find(menu => menu.id === this.selectedMenu);
     return menuItem && menuItem.component ? menuItem.component : html``;
   }
 
@@ -56,7 +56,7 @@ export class IAMenuSlider extends LitElement {
   }
 
   get selectedMenuClass() {
-    return this.selected ? 'open' : 'closed';
+    return this.selectedMenu ? 'open' : 'closed';
   }
 
   render() {
@@ -66,7 +66,7 @@ export class IAMenuSlider extends LitElement {
           ${this.menuItems}
         </ul>
         <div class="content ${this.selectedMenuClass}">
-          ${this.selectedMenu}
+          ${this.selectedMenuComponent}
         </div>
       </div>
     `;

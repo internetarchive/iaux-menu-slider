@@ -35,7 +35,7 @@ describe('<ia-menu-slider>', () => {
 
     expect(el.menus).to.equal(menus);
     expect(el.open).to.be.false;
-    expect(el.selected).to.equal('');
+    expect(el.selectedMenu).to.equal('');
   });
 
   it('sets the selected menu', async () => {
@@ -44,7 +44,7 @@ describe('<ia-menu-slider>', () => {
     el.setSelectedMenu({ detail: { id: menus[0].id } });
     await el.updateComplete;
 
-    expect(el.selected).to.equal(menus[0].id);
+    expect(el.selectedMenu).to.equal(menus[0].id);
   });
 
   it('unsets the selected menu when existing selected menu toggled', async () => {
@@ -56,7 +56,7 @@ describe('<ia-menu-slider>', () => {
     el.setSelectedMenu({ detail: { id: menus[0].id } });
     await el.updateComplete;
 
-    expect(el.selected).to.equal('');
+    expect(el.selectedMenu).to.equal('');
   });
 
   it('returns open CSS class when menu is open', async () => {
@@ -71,7 +71,7 @@ describe('<ia-menu-slider>', () => {
   it('returns open CSS class when menu is open', async () => {
     const el = await fixture(container(menus));
 
-    el.selected = menus[0].id;
+    el.selectedMenu = menus[0].id;
     await el.updateComplete;
 
     expect(el.selectedMenuClass).to.equal('open');
@@ -89,7 +89,7 @@ describe('<ia-menu-slider>', () => {
 
     await el.updateComplete;
 
-    expect(el.selected).to.equal(menus[0].id);
+    expect(el.selectedMenu).to.equal(menus[0].id);
   });
 
   it('renders menu item icons', async () => {
@@ -136,6 +136,6 @@ describe('<ia-menu-slider>', () => {
       .click();
     await el.updateComplete;
 
-    expect(el.selected).to.not.equal(menus[2].id);
+    expect(el.selectedMenu).to.not.equal(menus[2].id);
   });
 });
