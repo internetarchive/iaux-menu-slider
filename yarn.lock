@@ -873,122 +873,122 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@internetarchive/ia-icons@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/ia-icons/-/ia-icons-0.2.1.tgz#41ef2fcd0d38170543c35c88e8fe7ff26db4781c"
-  integrity sha512-EUZkjvzelsEyNKwIIvvukLszC4jdGYWf086fWF8vGQzfvhvFwSiggvY3JDYwyZHm665gKKl4TgC8+nczTWo5pg==
+"@internetarchive/ia-icons@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/ia-icons/-/ia-icons-0.3.0.tgz#17677c99a53156f421713f10b9bfb7e021772fbb"
+  integrity sha512-wNYV3oNxpMJIiINVo4kFt5N7FnW/C9YZ1rp1Mxtul8U4RpbXgYcGKJlbDV8MikLjEAnktQCJkR9GBPtbcMoYbA==
   dependencies:
-    "@internetarchive/icon-advance" "^0.2.1"
-    "@internetarchive/icon-audio" "^0.2.1"
-    "@internetarchive/icon-close" "^0.2.1"
-    "@internetarchive/icon-donate" "^0.2.1"
-    "@internetarchive/icon-ellipses" "^0.2.1"
-    "@internetarchive/icon-ia-logo" "^0.2.1"
-    "@internetarchive/icon-images" "^0.2.1"
-    "@internetarchive/icon-search" "^0.2.1"
-    "@internetarchive/icon-software" "^0.2.1"
-    "@internetarchive/icon-texts" "^0.2.1"
-    "@internetarchive/icon-upload" "^0.2.1"
-    "@internetarchive/icon-user" "^0.2.1"
-    "@internetarchive/icon-video" "^0.2.1"
-    "@internetarchive/icon-web" "^0.2.1"
+    "@internetarchive/icon-advance" "^0.3.0"
+    "@internetarchive/icon-audio" "^0.3.0"
+    "@internetarchive/icon-close" "^0.3.0"
+    "@internetarchive/icon-donate" "^0.3.0"
+    "@internetarchive/icon-ellipses" "^0.3.0"
+    "@internetarchive/icon-ia-logo" "^0.3.0"
+    "@internetarchive/icon-images" "^0.3.0"
+    "@internetarchive/icon-search" "^0.3.0"
+    "@internetarchive/icon-software" "^0.3.0"
+    "@internetarchive/icon-texts" "^0.3.0"
+    "@internetarchive/icon-upload" "^0.3.0"
+    "@internetarchive/icon-user" "^0.3.0"
+    "@internetarchive/icon-video" "^0.3.0"
+    "@internetarchive/icon-web" "^0.3.0"
     lit-element "^2.2.1"
 
-"@internetarchive/icon-advance@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-advance/-/icon-advance-0.2.1.tgz#29a26ac728a88b115708f9c5c0ce8714d4e1ed77"
-  integrity sha512-jq5p5VWABCX/hSXAykyCakHAfnHL4n+TxuCcKtDsnvigPHNpBWIigTMcatu7teL/IAfb5HjJKqxSghqjpbRt2w==
+"@internetarchive/icon-advance@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-advance/-/icon-advance-0.3.0.tgz#34f435ff2bb051d80c386a3883a4227335315254"
+  integrity sha512-ySTywhtR4frN5knHoKSx9hUli3Hwxo8g5oYpsJz3aSClJk16yrnD/W+mFGxkLMWwZSLwh0xWOHytGy24nFgTPg==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-audio@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-audio/-/icon-audio-0.2.1.tgz#adf0690d69b4bb1486c5eca577bb4b6714f24c58"
-  integrity sha512-T2yeTlnzos0hVvTu3r7sOVf3puU+vNG6jGidTWCwPJrRw4a6z15sRAp33zjkmYQvg0/TSihF3Pm2l+yJpoYYPQ==
+"@internetarchive/icon-audio@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-audio/-/icon-audio-0.3.0.tgz#b02d179f06990dab06732b999f543f3b7bd741b9"
+  integrity sha512-1ePbLFruRHiX2H5eKkjSdJs3bvkvaiZ4bXjzv3rEiGGC0tSiR/IkHn7um2Btq2HSK0SsmaDZ49Jc7LAp4E2wKw==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-close@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-close/-/icon-close-0.2.1.tgz#4161da26bbb520e2cd813cedb85beab20d3028ae"
-  integrity sha512-0zpM+CIodSflPNR3Wl5OnjlgvNWxERmhk4TEVqTtt010ExVN8bmrne20zuhSxGA1lkXfswfPuOPE1JbwQInp5g==
+"@internetarchive/icon-close@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-close/-/icon-close-0.3.0.tgz#59c0ef6d53a908a80e0abe397884b76f8e061e08"
+  integrity sha512-U55rVcmAtGSfey7DQvSrUkkjlTk6pX7PfGOHY/YsFYpUqsJ5f09q5xhVScOhwnMPWMKClVs+8lyvb3PZZkAJQg==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-donate@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-donate/-/icon-donate-0.2.1.tgz#94f28bb485482ef7e0c9d44d3c13903521e86574"
-  integrity sha512-JvwPBd6ZVnML579yTZ4Y6l50a3TRY3N/c5yj4vmQJyZ3TuMIW9BqkHBPPtzRS+6PUIvX9MBlQRwK4tQfo8/pkA==
+"@internetarchive/icon-donate@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-donate/-/icon-donate-0.3.0.tgz#30551d7d48243abd887338963d376fbf32c77191"
+  integrity sha512-EXpljLqyHOBtiI3KLyXoQlsv+jcs80zWwk21Oi1IyMi5cyYk2ZWStIw5K2Fdgz6vtgVD9Dqz4cLkLYFzyMI2Mw==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-ellipses@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-ellipses/-/icon-ellipses-0.2.1.tgz#4d5500f82c54d03189ff794cc42986f37ec8e608"
-  integrity sha512-7hyS1HMeXrV9zazHSq7rO5zqoHdt689Sgn5dAqbUcS3Jbbo6O+z+OwP9KuAMz4TVhjWZDKo2KRvxGPsBn2JGfA==
+"@internetarchive/icon-ellipses@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-ellipses/-/icon-ellipses-0.3.0.tgz#11ab4591ef0b61e350c63ce99105999946ae3c4f"
+  integrity sha512-3pQVmpN/HZq3txcJAzjL6vvdHvbx+HA3mIWNPsPFAo6Om8m2Chpyh2Ri3im+fArVNP2+bg8dJOTXnyJuZnJNFQ==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-ia-logo@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-ia-logo/-/icon-ia-logo-0.2.1.tgz#c7e99477176e4ccc5fdf62948acf7cea28969e4d"
-  integrity sha512-2x4AxGMuA5/6x5gz5tzYEPRAK2Ka+dvwbL2vq+20bs59sxX/IHjudmXMVOWVf2897NZhYQbMB1GD4PdczlVp5Q==
+"@internetarchive/icon-ia-logo@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-ia-logo/-/icon-ia-logo-0.3.0.tgz#37fc613bfcee69c4f17cfcb146bd06e7f57b03d1"
+  integrity sha512-Y0ZAIbiig7O7SixHoAQWMev3goV/OfKzRQqzoZd65XCEGbo9KjeZLMqT2FTOVKiRaUIjSrR6WZjnweANZgIyCQ==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-images@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-images/-/icon-images-0.2.1.tgz#d34aaa53cd137ccaa6d67fa64e7771055eace070"
-  integrity sha512-cwoCRTFdgTE3NRDhYKSxLDA7txjghagDuUkBBdlYa6qgtzkGtkCi+nVginB1TWPNgVizJFuBxs88fOwgPk6ICA==
+"@internetarchive/icon-images@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-images/-/icon-images-0.3.0.tgz#5547dcc0a1d0887b6f9501052c6b849f8672f74a"
+  integrity sha512-C5bUwuxwSCdTM/adt1VuNvGHPJUOt/rOoFsAsn3qKpXebgeqOqpuMFyGp7S0iqr1yK7kHdlXvc3punJJewvugg==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-search@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-search/-/icon-search-0.2.1.tgz#8cb78a61bcd76cc7515a02c24f9395365caa7bcf"
-  integrity sha512-S4JmfAFHLqg7KsCFbJGHLR2CeUdbJihOTR4xkql1DEbkvNifYV/LBqTS39GSU8AUMilO9H1d70UGVnbR3OxPbA==
+"@internetarchive/icon-search@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-search/-/icon-search-0.3.0.tgz#44bca911bcb7ef2c52e1dae8b0c5a05ef666c7eb"
+  integrity sha512-0+os35VGjCyQsgmptCccPd7GKUkID1ezhu0Wcg0nJ5WJfnih97SF93JhwOG/nmF5Lk4Kdljx+7XsIP1Ac4Fs6A==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-software@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-software/-/icon-software-0.2.1.tgz#8535dd62ec6046ed3b4325e5fa64099c125e757a"
-  integrity sha512-eFRSRPU/VtCb82nHKleyVqJbNAkniUDg97dYG0KHny0uMg85j75BgIFF6B7I+h0H0yHn1LSiUAp9dgvdoW7olg==
+"@internetarchive/icon-software@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-software/-/icon-software-0.3.0.tgz#a21b44f75685914aa92ca47476d1cc784201dc9c"
+  integrity sha512-8ZDLOVayxsXF1JrLebpVNd3FYQlwXhiYU//kA6rOsaxCDW8gNtEmxdjE8Uts/ZuFBNTpG+dZsjAggha8Qbmzzg==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-texts@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-texts/-/icon-texts-0.2.1.tgz#59a00b06708b4b1a90e868d26b2e8a706cc94820"
-  integrity sha512-hxb9RcPp5IVamvBXRSuDmHqcf8KcwqiFmyatFixY8GOmf7JFHzi7pXWbH1I5bog6mZah3sAR5fO9b7Ry57ZbTQ==
+"@internetarchive/icon-texts@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-texts/-/icon-texts-0.3.0.tgz#67775ed64a91d85aef64f3d8720dca96e4d0e1e4"
+  integrity sha512-nLxdsNBOvvMtxzyvje03sd1q5AY+jdiWz4IkowxX3/AkeMELjWgsW40mGvvKaNYtuvW1tc7CKMYT7ADQvo4KLg==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-upload@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-upload/-/icon-upload-0.2.1.tgz#ffecc4deceb242fc78c65af942363464fee8d6e6"
-  integrity sha512-qL6lyO+CS5JqvFpuNpHTrxY5++uG23mi9R1OIBnwPYqO76mLy/wGV5Un7N+lGQPdWFyrTaXRbQPWDgDeOziVyA==
+"@internetarchive/icon-upload@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-upload/-/icon-upload-0.3.0.tgz#78f70a9f8849c9c5b349a7ba26ad8fc2206301d1"
+  integrity sha512-ZIixEdtsEhJpigIKEzqcIiRpHEDiSNmoRrQsHAdCS4pKJ5/aEn2aLZyF8FPVU+bvM016BnRIHMg3BGCgY9SIOg==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-user@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-user/-/icon-user-0.2.1.tgz#46245276bb87b1b9d111d30d53867fa9fde815f3"
-  integrity sha512-a2z4uRIl1miwwwMS1OCkmTY/jka5UKmTzykig3c2IGy6U8jFD10YxCiI+3tAl3lAsFtPOuOqzffvGVUkglf/pw==
+"@internetarchive/icon-user@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-user/-/icon-user-0.3.0.tgz#e6b3e5666fa473cebad64b411e211f35bef597a3"
+  integrity sha512-98i2CJhV/VNHbJqA3W0iDZF2sLUYSLNFhUJKrZ2V+57e3c23tmODRFlvP/jHmxl3O6Eo7u2WJ0YGyaOyfFkDDg==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-video@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-video/-/icon-video-0.2.1.tgz#b6732b3af2b71fc863a79bb0bdbfb98f746dffc6"
-  integrity sha512-hLoYmakCWJutRlL3QI6mj+gFu3vVnlHeM4KDaHTknyAcweSENQbvZ6EC2GScg5ItMxEUMSyjS+yf2imH3CFYAA==
+"@internetarchive/icon-video@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-video/-/icon-video-0.3.0.tgz#d0b0d22fe3d88a8a057802503bf00de3fabe744d"
+  integrity sha512-a3c33cNU1TXPbeXfrKPasDM8fgPKOzqM9csecJ4lnwswSu05zlLq+WwhkrC6xICgohVQD1DdsYBwdllV4K8V3w==
   dependencies:
     lit-html "^1.2.1"
 
-"@internetarchive/icon-web@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@internetarchive/icon-web/-/icon-web-0.2.1.tgz#a72f70a8c3f386aebed156bb3aea6f0e914f97ea"
-  integrity sha512-BoRrkBydKHSYwnORdAJUz8C9rRJKv3DCye0dJp7Ctpg7KZOOHhP1Fq+wBhDDPZf9bk8rEd/OEKxJ96tnMtxwhg==
+"@internetarchive/icon-web@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-web/-/icon-web-0.3.0.tgz#5b888bf7c945797ae6292aa195139c16b1f87269"
+  integrity sha512-FNEgqUiusgPrCD3GiLePmikzK9/Dy2Klgq4/fcZkZ00AA360rPzMosuUJvJ3j1h3eY5etX/Hptf+bcciUaQkhg==
   dependencies:
     lit-html "^1.2.1"
 

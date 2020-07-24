@@ -50,8 +50,19 @@
   <script type="module">
     import { render } from 'lit-html';
     import { html, css, LitElement } from 'lit-element';
-    import '@internetarchive/ia-icons/ia-icon';
+    import IAIcons from '@internetarchive/ia-icons';
     import '../ia-menu-slider.js';
+
+    customElements.define('ia-icon', class extends IAIcons {
+      static get styles() {
+        return [css`
+          svg {
+            width: 40px;
+            height: 40px;
+          }
+        `, IAIcons.styles];
+      }
+    });
 
     class MenuContent extends LitElement {
       static get styles() {
