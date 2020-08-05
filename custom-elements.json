@@ -50,6 +50,11 @@
           "name": "--activeButtonBg",
           "description": "Active menu item background",
           "type": "Color"
+        },
+        {
+          "name": "--menuButtonLabelDisplay",
+          "description": "Display value for button text label",
+          "type": "Display"
         }
       ]
     }

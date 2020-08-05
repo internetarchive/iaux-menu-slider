@@ -43,6 +43,7 @@ To toggle the menu open or closed, set the `open` property on the component.
 
 ```css
 ia-menu-slider {
+  --menuButtonLabelDisplay: none;
   --menuSliderBg: #151515;
   --primaryTextColor: #fff;
   --menuWidth: 320px;

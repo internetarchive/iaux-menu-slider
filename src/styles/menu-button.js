@@ -23,7 +23,7 @@ export default css`
   }
 
   .label {
-    display: none;
+    display: var(--menuButtonLabelDisplay, none);
     padding: 0;
     font-weight: 400;
     color: var(--primaryTextColor);

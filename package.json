@@ -1,11 +1,14 @@
 {
-  "name": "ia-menu-slider",
+  "name": "@internetarchive/ia-menu-slider",
   "version": "0.0.1",
   "description": "Menu slider used in ia-topnav",
   "author": "ia-menu-slider",
   "license": "MIT",
   "main": "index.js",
   "module": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
     "lint:eslint": "eslint --ext .js . --ignore-path .gitignore",
