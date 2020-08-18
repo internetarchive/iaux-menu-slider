@@ -32,7 +32,9 @@ export default css`
   }
 
   .menu-item > .icon {
+    position: relative;
     display: inline-flex;
+    z-index: 2;
     width: 42px;
     height: 42px;
     vertical-align: middle;

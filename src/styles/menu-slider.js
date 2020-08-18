@@ -1,5 +1,7 @@
 import { css } from 'lit-element';
 
+const menuButtonWidth = css`42px`;
+
 export default css`
   .menu {
     position: absolute;
@@ -15,13 +17,23 @@ export default css`
     transform: translateX(calc(var(--menuWidth) * -1));
     transition: transform var(--animationTiming) ease-in-out;
   }
+  .menu:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: ${menuButtonWidth};
+    content: "";
+    background: var(--menuSliderBg);
+  }
 
   .content {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 42px;
+    left: ${menuButtonWidth};
     z-index: 1;
     transform: translateX(calc(var(--menuWidth) * -1));
     transition: transform var(--animationTiming) ease-in-out;
@@ -33,12 +45,7 @@ export default css`
   }
 
   ul {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    padding: .5rem 0 .5rem .5rem;
+    padding: 0;
     margin: 0;
     list-style: none;
     background: var(--menuSliderBg);
