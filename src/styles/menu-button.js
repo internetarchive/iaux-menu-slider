@@ -4,6 +4,7 @@ export default css`
   a {
     display: inline-block;
     text-decoration: none;
+    cursor: pointer;
   }
 
   .menu-item {

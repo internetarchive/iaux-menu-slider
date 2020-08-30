@@ -1,3 +1,4 @@
+import { ifDefined } from 'lit-html/directives/if-defined';
 import { html, LitElement } from 'lit-element';
 import menuButtonCSS from './styles/menu-button.js';
 
@@ -62,7 +63,7 @@ class MenuButton extends LitElement {
   render() {
     return html`
       <a
-        href="${this.href}"
+        href="${ifDefined(this.href)}"
         class="menu-item ${this.buttonClass}"
         @click=${this.followable ? undefined : this.onClick}
       >
