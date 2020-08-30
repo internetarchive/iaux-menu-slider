@@ -55,6 +55,14 @@
           "name": "--menuButtonLabelDisplay",
           "description": "Display value for button text label",
           "type": "Display"
+        }, {
+          "name": "--closeMenuIconWidth",
+          "description": "Close menu icon width",
+          "type": "Length"
+        }, {
+          "name": "--closeMenuIconHeight",
+          "description": "Close menu icon height",
+          "type": "Length"
         }
       ]
     }

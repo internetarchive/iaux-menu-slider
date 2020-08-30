@@ -22,6 +22,12 @@
       --iconWidth: 40px;
       --iconHeight: 40px;
       --activeButtonBg: #282828;
+      --closeMenuIconWidth: 18px;
+      --closeMenuIconHeight: 18px;
+      --activeButtonBg: #282828;
+      --shareLinkColor: #fff;
+      --shareIconBorder: #fff;
+      --shareIconBg: #151515;
     }
 
     html {
@@ -60,6 +66,7 @@
     import { render } from 'lit-html';
     import { html, css, LitElement } from 'lit-element';
     import '../ia-menu-slider.js';
+    import '@internetarchive/ia-sharing-options/ia-sharing-options';
 
     class MenuContent extends LitElement {
       static get styles() {
@@ -118,17 +125,29 @@
 
     const menuSlider = document.createElement('ia-menu-slider');
     menuSlider.menus = [{
+      icon: html`<ia-icon icon="share" style="--iconWidth: 28px; --iconHeight: 28px;"></ia-icon>`,
+      label: 'Sharing options',
+      id: 'share',
+      component: html`<ia-sharing-options
+        identifier="goody"
+        type="book"
+        creator="Welsh, Charles"
+        description="The history of Little Goody Two-Shoes : otherwise called Mrs. Margery Two-Shoes ... [1766 edition]"
+        baseHost="www-shaner.archive.org"
+      ></ia-sharing-options>`,
+    }, {
       icon: html`
         <ia-icon icon="audio"></ia-icon>
       `,
       label: 'Audio',
       id: 'audio',
+      renderCloseAction: false,
       component: html`
         <menu-content
           .title=${"Audio menu"}
           .items=${[1, 2, 3, 4].map((i) => 'Song ' + i)}
         ></menu-content>
-      `
+      `,
     }, {
       icon: html`
         <ia-icon icon="software"></ia-icon>
@@ -140,7 +159,7 @@
           .title=${"Software menu"}
           .items=${[1, 2, 3, 4, 5, 6].map((i) => 'CD-ROM ' + i)}
         ></menu-content>
-      `
+      `,
     }, {
       icon: html`
         <ia-icon icon="donate" style="--iconFillColor: #f00"></ia-icon>

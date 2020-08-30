@@ -26,6 +26,7 @@
     "lit-html": "^1.1.2"
   },
   "devDependencies": {
+    "@internetarchive/ia-sharing-options": "0.0.0-alpha.f838473",
     "@open-wc/demoing-storybook": "^2.0.0",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/testing": "^2.0.0",

@@ -1,3 +1,4 @@
+import { nothing } from 'lit-html';
 import { LitElement, html } from 'lit-element';
 import '@internetarchive/ia-icons/ia-icon';
 import menuSliderCSS from './styles/menu-slider.js';
@@ -27,6 +28,16 @@ export class IAMenuSlider extends LitElement {
   setSelectedMenu({ detail }) {
     const { id } = detail;
     this.selectedMenu = this.selectedMenu === id ? '' : id;
+  }
+
+  closeMenu() {
+    this.selectedMenu = '';
+    this.open = false;
+  }
+
+  handleCloseClick(e) {
+    e.preventDefault();
+    this.closeMenu();
   }
 
   get menuItems() {
@@ -60,14 +71,31 @@ export class IAMenuSlider extends LitElement {
     return this.selectedMenu ? 'open' : 'closed';
   }
 
+  get closeAction() {
+    const menuItem = this.menus.find(menu => menu.id === this.selectedMenu);
+    if (!menuItem) { return nothing; }
+    return menuItem.renderCloseAction !== false
+      ? html`<a
+        class="close"
+        href="#"
+        @click=${this.handleCloseClick}
+      >
+        <ia-icon icon="collapseSidebar"></ia-icon>
+      </a>`
+      : nothing;
+  }
+
   render() {
     return html`
       <div class="menu ${this.sliderDetailsClass}">
         <ul>
           ${this.menuItems}
         </ul>
-        <div class="content ${this.selectedMenuClass}" @menuTypeSelected=${this.setSelectedMenu}>
-          ${this.selectedMenuComponent}
+        <div class="content ${this.selectedMenuClass}" @menuTypeSelected=${this.setSelectedMenu} @closeMenu=${this.closeMenu}>
+          ${this.closeAction}
+          <div class="submenu">
+            ${this.selectedMenuComponent}
+          </div>
         </div>
       </div>
     `;

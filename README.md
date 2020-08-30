@@ -33,7 +33,8 @@ their submenu components. Each menu item can have these properties:
   id: 'label', // Unique identifier used to track which menu item is selected
   component: html``, // The LitHtml literal to render to the submenu content element. Not needed if followable is true.
   followable: true, // Whether to follow the URL supplied in the href property. Optional.
-  href: '#' // If followable is true, URL followed when menu button clicked
+  href: '#', // If followable is true, URL followed when menu button clicked
+  renderCloseAction: true // Toggle for rendering the close submenu button. Optional.
 }
 ```
 
@@ -51,6 +52,8 @@ ia-menu-slider {
   --iconFillColor: #fff;
   --iconStrokeColor: #fff;
   --activeButtonBg: #282828;
+  --closeMenuIconWidth: 18px;
+  --closeMenuIconHeight: 18px;
 }
 ```
 

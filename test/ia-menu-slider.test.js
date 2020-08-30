@@ -21,6 +21,7 @@ const menus = [{
   component: html`
     <h1>Menu 2</h1>
   `,
+  renderCloseAction: false,
 }, {
   icon: html`<i></i>`,
   label: 'Regular link',
@@ -137,5 +138,29 @@ describe('<ia-menu-slider>', () => {
     await el.updateComplete;
 
     expect(el.selectedMenu).to.not.equal(menus[2].id);
+  });
+
+  it('does not render close submenu action when optional prop is false', async () => {
+    const el = await fixture(container(menus));
+
+    el.selectedMenu = menus[1].id;
+    await el.updateComplete;
+    const closeAction = el.shadowRoot.querySelector('.close');
+
+    expect(closeAction).to.be.null;
+  });
+
+  it('closes menus and deselects submenu when close action clicked', async () => {
+    const el = await fixture(container(menus));
+
+    el.selectedMenu = menus[0].id;
+    el.open = true;
+    await el.updateComplete;
+
+    el.shadowRoot.querySelector('.close').click();
+    await el.updateComplete;
+
+    expect(el.open).to.equal(false);
+    expect(el.selectedMenu).to.equal('');
   });
 });
