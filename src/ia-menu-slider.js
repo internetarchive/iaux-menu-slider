@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit-element';
+import '@internetarchive/ia-icons/ia-icon';
 import menuSliderCSS from './styles/menu-slider.js';
 import './menu-button.js';
 
