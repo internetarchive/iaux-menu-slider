@@ -1,4 +1,9 @@
-import { html, fixture, expect } from '@open-wc/testing';
+import {
+  html,
+  fixture,
+  expect,
+  oneEvent,
+} from '@open-wc/testing';
 import { IAMenuSlider } from '../src/ia-menu-slider.js';
 
 customElements.define('ia-menu-slider', IAMenuSlider);
@@ -162,5 +167,19 @@ describe('<ia-menu-slider>', () => {
 
     expect(el.open).to.equal(false);
     expect(el.selectedMenu).to.equal('');
+  });
+
+  it('emits a custom event when close action occurs', async () => {
+    const el = await fixture(container(menus));
+    el.selectedMenu = menus[0].id;
+    el.open = true;
+    await el.updateComplete;
+
+    setTimeout(() => (
+      el.shadowRoot.querySelector('.close').click()
+    ));
+    const response = await oneEvent(el, 'menuSliderClosed');
+
+    expect(response).to.exist;
   });
 });

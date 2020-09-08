@@ -24,7 +24,10 @@
           "default": "''"
         }
       ],
-      "events": [],
+      "events": [{
+        "name": "menuSliderClosed",
+        "description": "Fired when menu slider close action occurs"
+      }],
       "slots": [],
       "cssProperties": [
         {

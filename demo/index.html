@@ -175,6 +175,10 @@
     document.querySelector('button').addEventListener('click', () => {
       menuSlider.open = !menuSlider.open;
     });
+
+    document.addEventListener('menuSliderClosed', () => {
+      console.log('Menu slider closed');
+    });
   </script>
 </body>
 </html>

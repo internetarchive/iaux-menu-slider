@@ -38,6 +38,10 @@ export class IAMenuSlider extends LitElement {
   handleCloseClick(e) {
     e.preventDefault();
     this.closeMenu();
+    this.dispatchEvent(new CustomEvent('menuSliderClosed', {
+      bubbles: true,
+      composed: true,
+    }));
   }
 
   get menuItems() {
