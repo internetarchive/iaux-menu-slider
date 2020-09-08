@@ -1,6 +1,6 @@
 import { nothing } from 'lit-html';
 import { LitElement, html } from 'lit-element';
-import '@internetarchive/ia-icons/ia-icon';
+import '@internetarchive/icon-collapse-sidebar/icon-collapse-sidebar';
 import menuSliderCSS from './styles/menu-slider.js';
 import './menu-button.js';
 
@@ -84,7 +84,7 @@ export class IAMenuSlider extends LitElement {
         href="#"
         @click=${this.handleCloseClick}
       >
-        <ia-icon icon="collapseSidebar"></ia-icon>
+        <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
       </a>`
       : nothing;
   }

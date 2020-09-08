@@ -21,12 +21,16 @@
     "storybook:build": "build-storybook"
   },
   "dependencies": {
-    "@internetarchive/ia-icons": "1.1.2",
+    "@internetarchive/icon-collapse-sidebar": "^1.1.0",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2"
   },
   "devDependencies": {
     "@internetarchive/ia-sharing-options": "0.0.0-alpha.f838473",
+    "@internetarchive/icon-audio": "^1.1.0",
+    "@internetarchive/icon-donate": "^1.1.0",
+    "@internetarchive/icon-share": "^1.1.0",
+    "@internetarchive/icon-software": "^1.1.0",
     "@open-wc/demoing-storybook": "^2.0.0",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/testing": "^2.0.0",

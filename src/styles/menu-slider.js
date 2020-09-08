@@ -58,7 +58,8 @@ ul {
   z-index: 2;
 }
 
-.close ia-icon {
+.close ia-icon-collapse-sidebar {
+  display: inline-block;
   --iconWidth: var(--closeMenuIconWidth);
   --iconHeight: var(--closeMenuIconHeight);
 }

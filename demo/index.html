@@ -66,7 +66,11 @@
     import { render } from 'lit-html';
     import { html, css, LitElement } from 'lit-element';
     import '../ia-menu-slider.js';
-    import '@internetarchive/ia-sharing-options/ia-sharing-options';
+    import '@internetarchive/ia-sharing-options/ia-sharing-options.js';
+    import '@internetarchive/icon-audio/icon-audio.js';
+    import '@internetarchive/icon-donate/icon-donate.js';
+    import '@internetarchive/icon-share/icon-share.js';
+    import '@internetarchive/icon-software/icon-software.js';
 
     class MenuContent extends LitElement {
       static get styles() {
@@ -125,7 +129,7 @@
 
     const menuSlider = document.createElement('ia-menu-slider');
     menuSlider.menus = [{
-      icon: html`<ia-icon icon="share" style="--iconWidth: 28px; --iconHeight: 28px;"></ia-icon>`,
+      icon: html`<ia-icon-share style="--iconWidth: 28px; --iconHeight: 28px;"></ia-icon-share>`,
       label: 'Sharing options',
       id: 'share',
       component: html`<ia-sharing-options
@@ -137,7 +141,7 @@
       ></ia-sharing-options>`,
     }, {
       icon: html`
-        <ia-icon icon="audio"></ia-icon>
+        <ia-icon-audio></ia-icon-audio>
       `,
       label: 'Audio',
       id: 'audio',
@@ -150,7 +154,7 @@
       `,
     }, {
       icon: html`
-        <ia-icon icon="software"></ia-icon>
+        <ia-icon-software></ia-icon-software>
       `,
       label: 'Software',
       id: 'software',
@@ -162,7 +166,7 @@
       `,
     }, {
       icon: html`
-        <ia-icon icon="donate" style="--iconFillColor: #f00"></ia-icon>
+        <ia-icon-donate style="--iconFillColor: #f00"></ia-icon-donate>
       `,
       label: 'Donate',
       id: 'donate',
