@@ -70,6 +70,7 @@ export default css`
     background: var(--activeButtonBg);
     border-right: 2px solid;
     border-color: var(--accentColor);
+    padding: .6rem 0 .6rem .6rem;
   }
 
   .open {
