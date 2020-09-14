@@ -58,7 +58,7 @@
   </main>
 
   <script type="module">
-    /* eslint-disable max-classes-per-file */
+    /* eslint-disable max-classes-per-file, import/no-extraneous-dependencies, no-console */
     import { render } from 'lit-html';
     import { html, css, LitElement } from 'lit-element';
     import IAIcons from '@internetarchive/ia-icons';
@@ -127,11 +127,9 @@
         `;
       }
     }
-
     customElements.define('menu-content', MenuContent);
 
-    const menuSlider = document.createElement('ia-menu-slider');
-    menuSlider.menus = [{
+    const menus = [{
       icon: html`
         <ia-icon icon="audio"></ia-icon>
       `,
@@ -140,7 +138,7 @@
       actionButton: html`
         <button
           style='color: white;'
-          @click=${() => alert('CLICK EXTRA ACTION')}
+          @click=${e => console.log('CLICK EXTRA ACTION', e)}
         >
           <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
         </button>
@@ -149,7 +147,7 @@
       id: 'audio',
       component: html`
         <menu-content
-          .title=${'Audio menu'}
+          .title='Audio menu'
           .items=${[1, 2, 3, 4].map(i => `Song ${i}`)}
         ></menu-content>
       `,
@@ -163,7 +161,7 @@
       id: 'software',
       component: html`
         <menu-content
-          .title=${'Software menu'}
+          .title='Software menu'
           .items=${[1, 2, 3, 4, 5, 6].map(i => `CD-ROM ${i}`)}
         ></menu-content>
       `,
@@ -177,11 +175,22 @@
       href: '#',
     }];
 
-    document.querySelector('section').appendChild(menuSlider);
+    (function toggleScope() {
+      let menuOpen = false;
+      const closeCB = (event) => {
+        console.log('Drawer Closed', event);
+        menuOpen = false;
+      };
+      const menuSliderElement = html`<ia-menu-slider .menus=${menus} @ItemNavMenuClosed=${closeCB} ?open=${menuOpen}></ia-menu-slider>`;
 
-    document.querySelector('button').addEventListener('click', () => {
-      menuSlider.open = !menuSlider.open;
-    });
+      const toggleMenu = () => {
+        menuOpen = !menuOpen;
+        document.querySelector('ia-menu-slider').open = menuOpen;
+      };
+
+      render(menuSliderElement, document.querySelector('section'));
+      document.querySelector('button').addEventListener('click', toggleMenu);
+    }());
   </script>
 </body>
 </html>
