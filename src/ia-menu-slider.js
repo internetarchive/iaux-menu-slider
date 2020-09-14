@@ -1,5 +1,7 @@
+import { nothing } from 'lit-html';
 import { LitElement, html } from 'lit-element';
 import menuSliderCSS from './styles/menu-slider.js';
+import '@internetarchive/icon-collapse-sidebar/icon-collapse-sidebar.js';
 import './menu-button.js';
 
 export class IAMenuSlider extends LitElement {
@@ -46,8 +48,12 @@ export class IAMenuSlider extends LitElement {
     ));
   }
 
+  get selectedMenuDetails() {
+    return this.menus.find(menu => menu.id === this.selectedMenu);
+  }
+
   get selectedMenuComponent() {
-    const menuItem = this.menus.find(menu => menu.id === this.selectedMenu);
+    const menuItem = this.selectedMenuDetails;
     return menuItem && menuItem.component ? menuItem.component : html``;
   }
 
@@ -59,6 +65,38 @@ export class IAMenuSlider extends LitElement {
     return this.selectedMenu ? 'open' : 'closed';
   }
 
+  /**
+   * closes menu drawer
+   */
+  closeMenu() {
+    this.open = !this.open;
+  }
+
+  /**
+   * renders menu header
+   */
+  get renderMenuHeader() {
+    // const { selectedMenu } = this;
+    const { title = '', menuDetails = '', actionButton } = this.selectedMenuDetails || {};
+    const actionSection = actionButton
+      ? html`<div class="custom-action">${actionButton}</div>`
+      : nothing;
+
+    return html`
+      <header>
+        <div class='details'>
+          <h3>${title}</h3>
+          <span class="extra-details">${menuDetails}</span>
+        </div>
+        ${actionSection}
+        <button class="close" aria-label="Close this menu" @click=${this.closeMenu}>
+          <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
+        </button>
+      </header>
+    `;
+  }
+
+  /** @inheritdoc */
   render() {
     return html`
       <div class="menu ${this.sliderDetailsClass}">
@@ -66,6 +104,7 @@ export class IAMenuSlider extends LitElement {
           ${this.menuItems}
         </ul>
         <div class="content ${this.selectedMenuClass}" @menuTypeSelected=${this.setSelectedMenu}>
+          ${this.renderMenuHeader}
           ${this.selectedMenuComponent}
         </div>
       </div>

@@ -28,6 +28,36 @@ export default css`
     background: var(--menuSliderBg);
   }
 
+  header: {
+    display: flex;
+  }
+  header * {
+    margin: 0;
+    display: inline-block;
+  }
+
+  header .details {
+    width: 80%;
+  }
+
+  header .custom-action > *,
+  header .close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    width: var(--iconWidth);
+    height: var(--iconHeight);
+  }
+
+  header .custom-action,
+  header .close {
+    position: absolute;
+  }
+  header .close {
+    right: 5px;
+    margin: 0 2px 0 10px;
+  }
+
   .content {
     position: absolute;
     top: 0;
