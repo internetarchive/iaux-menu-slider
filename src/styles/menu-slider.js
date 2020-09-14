@@ -35,6 +35,10 @@ export default css`
     margin: 0;
     display: inline-block;
   }
+  header button {
+    outline: none;
+    cursor: pointer;
+  }
 
   header .details {
     width: 80%;
