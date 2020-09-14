@@ -62,6 +62,7 @@
     import { render } from 'lit-html';
     import { html, css, LitElement } from 'lit-element';
     import IAIcons from '@internetarchive/ia-icons';
+    import '@internetarchive/icon-volumes/icon-volumes.js';
     import '../ia-menu-slider.js';
 
     customElements.define('ia-icon', class extends IAIcons {
@@ -140,7 +141,7 @@
           style='color: white;'
           @click=${e => console.log('CLICK EXTRA ACTION', e)}
         >
-          <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
+          <ia-icon-volumes></ia-icon-volumes>
         </button>
       `,
       label: 'Audio',
