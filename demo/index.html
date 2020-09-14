@@ -18,6 +18,8 @@
       --primaryTextColor: #fff;
       --menuWidth: 320px;
       --animationTiming: .25s;
+      --iconHeight: 20px;
+      --iconWidth: 20px;
       --iconFillColor: #fff;
       --iconStrokeColor: #fff;
       --activeButtonBg: #282828;
@@ -56,6 +58,7 @@
   </main>
 
   <script type="module">
+    /* eslint-disable max-classes-per-file */
     import { render } from 'lit-html';
     import { html, css, LitElement } from 'lit-element';
     import IAIcons from '@internetarchive/ia-icons';
@@ -132,26 +135,38 @@
       icon: html`
         <ia-icon icon="audio"></ia-icon>
       `,
+      title: 'Audio Menu',
+      menuDetails: '(100,000,000 tracks)',
+      actionButton: html`
+        <button
+          style='color: white;'
+          @click=${() => alert('CLICK EXTRA ACTION')}
+        >
+          <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
+        </button>
+      `,
       label: 'Audio',
       id: 'audio',
       component: html`
         <menu-content
-          .title=${"Audio menu"}
-          .items=${[1, 2, 3, 4].map((i) => 'Song ' + i)}
+          .title=${'Audio menu'}
+          .items=${[1, 2, 3, 4].map(i => `Song ${i}`)}
         ></menu-content>
-      `
+      `,
     }, {
       icon: html`
         <ia-icon icon="software"></ia-icon>
       `,
+      title: 'Software Menu',
+      menuDetails: '(10 apps)',
       label: 'Software',
       id: 'software',
       component: html`
         <menu-content
-          .title=${"Software menu"}
-          .items=${[1, 2, 3, 4, 5, 6].map((i) => 'CD-ROM ' + i)}
+          .title=${'Software menu'}
+          .items=${[1, 2, 3, 4, 5, 6].map(i => `CD-ROM ${i}`)}
         ></menu-content>
-      `
+      `,
     }, {
       icon: html`
         <ia-icon icon="donate" style="--iconFillColor: #f00"></ia-icon>
@@ -159,7 +174,7 @@
       label: 'Donate',
       id: 'donate',
       followable: true,
-      href: '#'
+      href: '#',
     }];
 
     document.querySelector('section').appendChild(menuSlider);
