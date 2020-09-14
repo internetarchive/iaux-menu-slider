@@ -38,6 +38,8 @@ export default css`
     transform: translateX(calc(var(--menuWidth) * -1));
     transition: transform var(--animationTiming) ease-in-out;
     background: var(--activeButtonBg);
+    border-right: 2px solid;
+    border-color: var(--accentColor);
   }
 
   .open {

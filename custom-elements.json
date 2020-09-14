@@ -41,7 +41,13 @@
           "name": "--menuSliderBg",
           "description": "Menu background color",
           "type": "Color"
-        }, {
+        },
+        {
+          "name": "--accentColor",
+          "description": "Accent color for menu",
+          "type": "Color"
+        },
+        {
           "name": "--animationTiming",
           "description": "Duration of menu animation",
           "type": "Time"
