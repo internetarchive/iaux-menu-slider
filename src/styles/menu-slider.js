@@ -69,7 +69,7 @@ export default css`
     transition: transform var(--animationTiming) ease-in-out;
     background: var(--activeButtonBg);
     border-right: 2px solid;
-    border-color: var(--accentColor);
+    border-color: var(--subpanelRightBorderColor);
     padding: .6rem 0 .6rem .6rem;
   }
 

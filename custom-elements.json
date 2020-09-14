@@ -48,7 +48,7 @@
           "type": "Color"
         },
         {
-          "name": "--accentColor",
+          "name": "--subpanelRightBorderColor",
           "description": "Accent color for menu",
           "type": "Color"
         },
