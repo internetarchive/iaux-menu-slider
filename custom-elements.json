@@ -24,7 +24,12 @@
           "default": "''"
         }
       ],
-      "events": [],
+      "events": [
+        {
+          "name": "ItemNavMenuClosed",
+          "description": "Fires whenever the menu drawer is closed"
+        }
+      ],
       "slots": [],
       "cssProperties": [
         {

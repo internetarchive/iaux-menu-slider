@@ -69,7 +69,11 @@ export class IAMenuSlider extends LitElement {
    * closes menu drawer
    */
   closeMenu() {
-    this.open = !this.open;
+    this.open = false;
+    const drawerClosed = new CustomEvent('ItemNavMenuClosed', {
+      detail: this.selectedMenuDetails,
+    });
+    this.dispatchEvent(drawerClosed);
   }
 
   /**
