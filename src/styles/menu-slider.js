@@ -29,7 +29,7 @@ export default css`
   }
 
   header {
-    margin-top: 2px;
+    margin: .2rem 0 .5rem 0;
   }
 
   header * {
@@ -59,8 +59,7 @@ export default css`
     position: absolute;
   }
   header .close {
-    right: 5px;
-    margin: 0 2px 0 10px;
+    right: .5rem;
   }
 
   .content {
@@ -73,9 +72,9 @@ export default css`
     transform: translateX(calc(var(--menuWidth) * -1));
     transition: transform var(--animationTiming) ease-in-out;
     background: var(--activeButtonBg);
-    border-right: 2px solid;
+    border-right: .2rem solid;
     border-color: var(--subpanelRightBorderColor);
-    padding: .6rem 0 .6rem .6rem;
+    padding: .5rem 0 .5rem .5rem;
   }
 
   .open {
