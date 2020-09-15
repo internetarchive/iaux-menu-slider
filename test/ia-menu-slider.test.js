@@ -4,7 +4,7 @@ import { IAMenuSlider } from '../src/ia-menu-slider.js';
 customElements.define('ia-menu-slider', IAMenuSlider);
 
 const container = (menus = []) => (
-  html`<ia-menu-slider .menus=${menus} @ItemNavMenuClosed=${() => {}}></ia-menu-slider>`
+  html`<ia-menu-slider .menus=${menus}></ia-menu-slider>`
 );
 
 const menus = [{
