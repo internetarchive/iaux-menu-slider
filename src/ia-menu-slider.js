@@ -4,6 +4,9 @@ import menuSliderCSS from './styles/menu-slider.js';
 import '@internetarchive/icon-collapse-sidebar/icon-collapse-sidebar.js';
 import './menu-button.js';
 
+const sliderEvents = {
+  closeDrawer: 'ItemNavMenuClosed',
+};
 export class IAMenuSlider extends LitElement {
   static get styles() {
     return menuSliderCSS;
@@ -39,7 +42,8 @@ export class IAMenuSlider extends LitElement {
    */
   closeMenu() {
     this.open = false;
-    const drawerClosed = new CustomEvent('ItemNavMenuClosed', {
+    const { closeDrawer } = sliderEvents;
+    const drawerClosed = new CustomEvent(closeDrawer, {
       detail: this.selectedMenuDetails,
     });
     this.dispatchEvent(drawerClosed);
