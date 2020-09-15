@@ -152,8 +152,7 @@ describe('<ia-menu-slider>', () => {
         <button
           style='color: white;'
           @click=${extraActionClickHandler}
-        >Foo
-        </button>
+        >Foo</button>
       `,
       label: 'Audio',
       id: 'audio',

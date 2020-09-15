@@ -25,9 +25,43 @@ export class IAMenuSlider extends LitElement {
     this.selectedMenu = '';
   }
 
+  /**
+   * Event handler, captures state of selected menu
+   * @param { CustomEvent } event
+   */
   setSelectedMenu({ detail }) {
     const { id } = detail;
     this.selectedMenu = this.selectedMenu === id ? '' : id;
+  }
+
+  /**
+   * closes menu drawer
+   */
+  closeMenu() {
+    this.open = false;
+    const drawerClosed = new CustomEvent('ItemNavMenuClosed', {
+      detail: this.selectedMenuDetails,
+    });
+    this.dispatchEvent(drawerClosed);
+  }
+
+  get selectedMenuDetails() {
+    return this.menus.find(menu => menu.id === this.selectedMenu);
+  }
+
+  get selectedMenuComponent() {
+    const menuItem = this.selectedMenuDetails;
+    return menuItem && menuItem.component ? menuItem.component : html``;
+  }
+
+  /* render */
+
+  get sliderDetailsClass() {
+    return this.open ? 'open' : 'closed';
+  }
+
+  get selectedMenuClass() {
+    return this.selectedMenu ? 'open' : 'closed';
   }
 
   get menuItems() {
@@ -48,39 +82,7 @@ export class IAMenuSlider extends LitElement {
     ));
   }
 
-  get selectedMenuDetails() {
-    return this.menus.find(menu => menu.id === this.selectedMenu);
-  }
-
-  get selectedMenuComponent() {
-    const menuItem = this.selectedMenuDetails;
-    return menuItem && menuItem.component ? menuItem.component : html``;
-  }
-
-  get sliderDetailsClass() {
-    return this.open ? 'open' : 'closed';
-  }
-
-  get selectedMenuClass() {
-    return this.selectedMenu ? 'open' : 'closed';
-  }
-
-  /**
-   * closes menu drawer
-   */
-  closeMenu() {
-    this.open = false;
-    const drawerClosed = new CustomEvent('ItemNavMenuClosed', {
-      detail: this.selectedMenuDetails,
-    });
-    this.dispatchEvent(drawerClosed);
-  }
-
-  /**
-   * renders menu header
-   */
   get renderMenuHeader() {
-    // const { selectedMenu } = this;
     const { title = '', menuDetails = '', actionButton } = this.selectedMenuDetails || {};
     const actionSection = actionButton
       ? html`<div class="custom-action">${actionButton}</div>`
@@ -88,7 +90,7 @@ export class IAMenuSlider extends LitElement {
 
     return html`
       <header>
-        <div class='details'>
+        <div class="details">
           <h3>${title}</h3>
           <span class="extra-details">${menuDetails}</span>
         </div>

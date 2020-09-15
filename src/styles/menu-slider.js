@@ -28,9 +28,10 @@ export default css`
     background: var(--menuSliderBg);
   }
 
-  header: {
-    display: flex;
+  header {
+    margin-top: 2px;
   }
+
   header * {
     margin: 0;
     display: inline-block;
