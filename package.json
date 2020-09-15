@@ -1,6 +1,6 @@
 {
   "name": "@internetarchive/ia-menu-slider",
-  "version": "0.0.2",
+  "version": "0.0.3-alpha.1",
   "description": "Menu slider used in ia-topnav",
   "author": "ia-menu-slider",
   "license": "MIT",
