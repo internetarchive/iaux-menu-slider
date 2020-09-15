@@ -28,6 +28,40 @@ export default css`
     background: var(--menuSliderBg);
   }
 
+  header {
+    margin: .2rem 0 .5rem 0;
+  }
+
+  header * {
+    margin: 0;
+    display: inline-block;
+  }
+  header button {
+    outline: none;
+    cursor: pointer;
+  }
+
+  header .details {
+    width: 80%;
+  }
+
+  header .custom-action > *,
+  header .close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    width: var(--iconWidth);
+    height: var(--iconHeight);
+  }
+
+  header .custom-action,
+  header .close {
+    position: absolute;
+  }
+  header .close {
+    right: .5rem;
+  }
+
   .content {
     position: absolute;
     top: 0;
@@ -38,6 +72,9 @@ export default css`
     transform: translateX(calc(var(--menuWidth) * -1));
     transition: transform var(--animationTiming) ease-in-out;
     background: var(--activeButtonBg);
+    border-right: .2rem solid;
+    border-color: var(--subpanelRightBorderColor);
+    padding: .5rem 0 .5rem .5rem;
   }
 
   .open {
