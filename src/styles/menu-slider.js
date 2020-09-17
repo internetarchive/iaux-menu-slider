@@ -51,7 +51,7 @@ export default css`
     background-color: transparent;
     border: 0;
     width: var(--iconWidth);
-    height: var(--iconHeight);
+    height: var(--closeIconHeight);
   }
 
   header .custom-action,
