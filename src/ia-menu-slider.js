@@ -100,7 +100,9 @@ export class IAMenuSlider extends LitElement {
         </div>
         ${actionSection}
         <button class="close" aria-label="Close this menu" @click=${this.closeMenu}>
-          <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
+          <ia-icon-collapse-sidebar
+            style="--iconWidth: var(--closeIconWidth); --iconHeight: var(--closeIconHeight);"
+          ></ia-icon-collapse-sidebar>
         </button>
       </header>
     `;

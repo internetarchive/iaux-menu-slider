@@ -3,6 +3,10 @@ import { css } from 'lit-element';
 const menuButtonWidth = css`42px`;
 
 export default css`
+  :host {
+    --iconWidth: var(--closeIconWidth);
+    --iconHeight: var(--closeIconHeight);
+  }
   .menu {
     position: absolute;
     top: 0;
