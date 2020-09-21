@@ -8,8 +8,11 @@ export default css`
     --iconHeight: var(--closeIconHeight);
   }
   .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
     width: var(--menuWidth);
-    height: inherit;
     padding: .5rem;
     box-sizing: border-box;
     font-size: 1.4rem;
