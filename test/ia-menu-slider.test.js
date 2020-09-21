@@ -84,7 +84,7 @@ describe('<ia-menu-slider>', () => {
       .shadowRoot
       .querySelector('menu-button')
       .shadowRoot
-      .querySelector('a')
+      .querySelector('button')
       .click();
 
     await el.updateComplete;
@@ -114,7 +114,7 @@ describe('<ia-menu-slider>', () => {
       .shadowRoot
       .querySelector('menu-button')
       .shadowRoot
-      .querySelector('a')
+      .querySelector('button')
       .click();
     await el.updateComplete;
     const menuComponent = el

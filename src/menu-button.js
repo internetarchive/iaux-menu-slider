@@ -59,16 +59,29 @@ class MenuButton extends LitElement {
     `;
   }
 
-  render() {
+  get linkButton() {
     return html`
       <a
         href="${this.href}"
         class="menu-item ${this.buttonClass}"
         @click=${this.followable ? undefined : this.onClick}
+      >${this.menuItem}</a>
+    `;
+  }
+
+  get clickButton() {
+    return html`
+      <button
+        class="menu-item ${this.buttonClass}"
+        @click=${this.onClick}
       >
         ${this.menuItem}
-      </a>
-    `;
+      </button>
+  `;
+  }
+
+  render() {
+    return this.href ? this.linkButton : this.clickButton;
   }
 }
 

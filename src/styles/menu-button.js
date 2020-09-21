@@ -18,6 +18,10 @@ export default css`
     align-items: center;
   }
 
+  button.menu-item {
+    border: none;
+  }
+
   .menu-item:focus {
     outline: none;
   }
