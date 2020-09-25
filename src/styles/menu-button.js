@@ -35,6 +35,14 @@ export default css`
     vertical-align: middle;
   }
 
+  .menu-details {
+    color: var(--primaryTextColor);
+    display: inline-block;
+    margin-left: 5px;
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+
   .menu-item > .icon {
     position: relative;
     display: inline-flex;

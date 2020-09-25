@@ -42,6 +42,7 @@ export default css`
   }
 
   header .details {
+    font-weight: bold;
     width: 80%;
   }
 
