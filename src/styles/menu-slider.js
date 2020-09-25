@@ -62,6 +62,10 @@ export default css`
     right: .5rem;
   }
 
+  header .close * {
+    float: right;
+  }
+
   .content {
     position: absolute;
     top: 0;
