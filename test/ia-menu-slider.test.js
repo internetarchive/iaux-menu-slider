@@ -10,6 +10,7 @@ const container = (menus = []) => (
 const menus = [{
   icon: html`<span id="icon-1"></span>`,
   label: 'Icon 1',
+  menuDetails: '(this icon is rad)',
   id: 'menu-1',
   component: html`
     <h1>Menu 1</h1>
@@ -137,6 +138,21 @@ describe('<ia-menu-slider>', () => {
     await el.updateComplete;
 
     expect(el.selectedMenu).to.not.equal(menus[2].id);
+  });
+
+  describe('Menu list', async () => {
+    const el = await fixture(container(menus));
+    const menuList = el
+      .shadowRoot
+      .querySelectorAll('menu-button');
+
+    it('shows menu details when available', () => {
+      const firstMenuItem = menuList[0].shadowRoot.querySelector('.menu-details');
+      expect(firstMenuItem.innerText).to.equal(menus[0].menuDetails);
+
+      const secondMenuItem = menuList[1].shadowRoot.querySelector('.menu-details');
+      expect(secondMenuItem.innerText).to.be.empty;
+    });
   });
 
   describe('Header section', async () => {
