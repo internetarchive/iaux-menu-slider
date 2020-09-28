@@ -11,6 +11,7 @@ class MenuButton extends LitElement {
       icon: { type: String },
       href: { type: String },
       label: { type: String },
+      menuDetails: { type: String },
       id: { type: String },
       selected: { type: Boolean },
       followable: { type: Boolean },
@@ -22,6 +23,7 @@ class MenuButton extends LitElement {
     this.icon = '';
     this.href = '';
     this.label = '';
+    this.menuDetails = '';
     this.id = '';
     this.selected = false;
     this.followable = false;
@@ -56,19 +58,33 @@ class MenuButton extends LitElement {
         ${this.icon}
       </span>
       <span class="label">${this.label}</span>
+      <span class="menu-details">${this.menuDetails}</span>
     `;
   }
 
-  render() {
+  get linkButton() {
     return html`
       <a
         href="${this.href}"
         class="menu-item ${this.buttonClass}"
         @click=${this.followable ? undefined : this.onClick}
+      >${this.menuItem}</a>
+    `;
+  }
+
+  get clickButton() {
+    return html`
+      <button
+        class="menu-item ${this.buttonClass}"
+        @click=${this.onClick}
       >
         ${this.menuItem}
-      </a>
-    `;
+      </button>
+  `;
+  }
+
+  render() {
+    return this.href ? this.linkButton : this.clickButton;
   }
 }
 

@@ -76,6 +76,7 @@ export class IAMenuSlider extends LitElement {
             @menuTypeSelected=${this.setSelectedMenu}
             .icon=${menu.icon}
             .label=${menu.label}
+            .menuDetails=${menu.menuDetails}
             .id=${menu.id}
             .selected=${menu.id === this.selectedMenu}
             .followable=${menu.followable}
@@ -87,7 +88,7 @@ export class IAMenuSlider extends LitElement {
   }
 
   get renderMenuHeader() {
-    const { title = '', menuDetails = '', actionButton } = this.selectedMenuDetails || {};
+    const { label = '', menuDetails = '', actionButton } = this.selectedMenuDetails || {};
     const actionSection = actionButton
       ? html`<div class="custom-action">${actionButton}</div>`
       : nothing;
@@ -95,7 +96,7 @@ export class IAMenuSlider extends LitElement {
     return html`
       <header>
         <div class="details">
-          <h3>${title}</h3>
+          <h3>${label}</h3>
           <span class="extra-details">${menuDetails}</span>
         </div>
         ${actionSection}

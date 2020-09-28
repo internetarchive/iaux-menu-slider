@@ -42,6 +42,7 @@ export default css`
   }
 
   header .details {
+    font-weight: bold;
     width: 80%;
   }
 
@@ -60,6 +61,12 @@ export default css`
   }
   header .close {
     right: .5rem;
+    --iconWidth: var(--closeIconWidth);
+    --iconHeight: var(--closeIconHeight);
+  }
+
+  header .close * {
+    float: right;
   }
 
   .content {

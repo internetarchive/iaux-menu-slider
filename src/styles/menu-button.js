@@ -16,6 +16,14 @@ export default css`
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  button.menu-item {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
   }
 
   .menu-item:focus {
@@ -29,6 +37,14 @@ export default css`
     color: var(--primaryTextColor);
     text-align: left;
     vertical-align: middle;
+  }
+
+  .menu-details {
+    color: var(--primaryTextColor);
+    display: inline-block;
+    margin-left: 5px;
+    font-style: italic;
+    font-size: 1.5rem;
   }
 
   .menu-item > .icon {
