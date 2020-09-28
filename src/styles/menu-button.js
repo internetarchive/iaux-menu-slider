@@ -16,10 +16,14 @@ export default css`
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    border: none;
+    cursor: pointer;
   }
 
   button.menu-item {
-    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
   }
 
   .menu-item:focus {

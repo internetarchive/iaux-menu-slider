@@ -61,6 +61,8 @@ export default css`
   }
   header .close {
     right: .5rem;
+    --iconWidth: var(--closeIconWidth);
+    --iconHeight: var(--closeIconHeight);
   }
 
   header .close * {
