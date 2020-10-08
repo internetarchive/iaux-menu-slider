@@ -41,9 +41,13 @@ export default css`
     cursor: pointer;
   }
 
+  .with-secondary-action header .details {
+    width: 80%;
+  }
+
   header .details {
     font-weight: bold;
-    width: 80%;
+    width: 88%;
   }
 
   header .custom-action > *,

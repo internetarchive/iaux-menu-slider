@@ -92,9 +92,10 @@ export class IAMenuSlider extends LitElement {
     const actionSection = actionButton
       ? html`<div class="custom-action">${actionButton}</div>`
       : nothing;
+    const headerClass = actionButton ? 'with-secondary-action' : '';
 
     return html`
-      <header>
+      <header class="${headerClass}">
         <div class="details">
           <h3>${label}</h3>
           <span class="extra-details">${menuDetails}</span>
