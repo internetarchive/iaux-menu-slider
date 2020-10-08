@@ -100,10 +100,16 @@ export class IAMenuSlider extends LitElement {
           <span class="extra-details">${menuDetails}</span>
         </div>
         ${actionSection}
-        <button class="close" aria-label="Close this menu" @click=${this.closeMenu}>
-          <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
-        </button>
+        ${this.closeButton}
       </header>
+    `;
+  }
+
+  get closeButton() {
+    return html`
+      <button class="close" aria-label="Close this menu" @click=${this.closeMenu}>
+        <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
+      </button>
     `;
   }
 
@@ -111,6 +117,7 @@ export class IAMenuSlider extends LitElement {
   render() {
     return html`
       <div class="menu ${this.sliderDetailsClass}">
+        ${this.closeButton}
         <ul>
           ${this.menuItems}
         </ul>

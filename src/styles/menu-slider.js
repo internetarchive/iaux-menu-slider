@@ -47,25 +47,25 @@ export default css`
   }
 
   header .custom-action > *,
-  header .close {
+  button.close {
     padding: 0;
     background-color: transparent;
     border: 0;
-    width: var(--iconWidth);
-    height: var(--closeIconHeight);
+    width: var(--headerIconHeight);
+    height: var(--headerIconHeight);
   }
 
   header .custom-action,
-  header .close {
+  button.close {
     position: absolute;
   }
-  header .close {
+  button.close {
     right: .5rem;
-    --iconWidth: var(--closeIconWidth);
-    --iconHeight: var(--closeIconHeight);
+    --iconWidth: var(--headerIconWidth);
+    --iconHeight: var(--headerIconHeight);
   }
 
-  header .close * {
+  button.close * {
     float: right;
   }
 

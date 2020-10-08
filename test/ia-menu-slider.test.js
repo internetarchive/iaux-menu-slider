@@ -39,6 +39,13 @@ describe('<ia-menu-slider>', () => {
     expect(el.selectedMenu).to.equal('');
   });
 
+  it('has a close button', async () => {
+    const el = await fixture(container(menus));
+    const closebutton = el.shadowRoot
+      .querySelector('button.close');
+    expect(closebutton).to.not.be.undefined;
+  });
+
   it('sets the selected menu', async () => {
     const el = await fixture(container(menus));
 
