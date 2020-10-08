@@ -9,7 +9,7 @@ export default css`
     left: 0;
     bottom: 0;
     width: var(--menuWidth);
-    padding: .5rem;
+    padding: .5rem .5rem .5rem 0;
     box-sizing: border-box;
     font-size: 1.4rem;
     color: var(--primaryTextColor);
