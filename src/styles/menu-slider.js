@@ -47,7 +47,7 @@ export default css`
     cursor: pointer;
   }
 
-  .with-secondary-action header .details {
+  header.with-secondary-action .details {
     width: 80%;
   }
 
@@ -61,8 +61,8 @@ export default css`
     padding: 0;
     background-color: transparent;
     border: 0;
-    width: var(--headerIconHeight);
-    height: var(--headerIconHeight);
+    --iconWidth: var(--menuSliderHeaderIconWidth);
+    --iconHeight: var(--menuSliderHeaderIconHeight);
   }
 
   header .custom-action,
@@ -71,8 +71,6 @@ export default css`
   }
   button.close {
     right: .5rem;
-    --iconWidth: var(--headerIconWidth);
-    --iconHeight: var(--headerIconHeight);
   }
 
   button.close * {
@@ -109,11 +107,11 @@ export default css`
   }
 
   .content .selected-menu {
-    margin: 0.8rem 0px 0px;
     padding-bottom: 3rem;
     overflow: auto;
     position: absolute;
     width: 98%;
-    height: 90%;
+    bottom: 0;
+    top: 40px;
   }
 `;
