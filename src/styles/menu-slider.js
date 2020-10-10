@@ -98,10 +98,13 @@ export default css`
     transform: translateX(0);
   }
 
-  ul {
+  .menu-list {
     padding: 0;
     margin: 0;
     list-style: none;
     background: var(--menuSliderBg);
+  }
+  .menu-list li {
+    margin-bottom: 2px;
   }
 `;
