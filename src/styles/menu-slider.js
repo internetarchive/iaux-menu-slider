@@ -6,7 +6,7 @@ export default css`
 
   @media (max-width: 500px) {
     .menu.open {
-      width: 100%;
+      width: 100vw;
     }
   }
   .menu {
@@ -107,7 +107,6 @@ export default css`
   }
 
   .content .selected-menu {
-    padding-bottom: 3rem;
     overflow: auto;
     position: absolute;
     width: 98%;
