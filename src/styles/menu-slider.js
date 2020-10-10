@@ -3,6 +3,12 @@ import { css } from 'lit-element';
 const menuButtonWidth = css`42px`;
 
 export default css`
+
+  @media (max-width: 500px) {
+    .menu.open {
+      width: 100%;
+    }
+  }
   .menu {
     position: absolute;
     top: 0;
@@ -80,7 +86,7 @@ export default css`
     bottom: 0;
     left: ${menuButtonWidth};
     z-index: 1;
-    transform: translateX(calc(var(--menuWidth) * -1));
+    transform: translateX(calc(100% * -1));
     transition: transform var(--animationTiming) ease-in-out;
     background: var(--activeButtonBg);
     border-right: .2rem solid;
