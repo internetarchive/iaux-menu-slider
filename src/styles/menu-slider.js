@@ -107,4 +107,13 @@ export default css`
   .menu-list li {
     margin-bottom: 2px;
   }
+
+  .content .selected-menu {
+    margin: 0.8rem 0px 0px;
+    padding-bottom: 3rem;
+    overflow: auto;
+    position: absolute;
+    width: 98%;
+    height: 90%;
+  }
 `;

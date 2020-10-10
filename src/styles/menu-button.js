@@ -37,6 +37,7 @@ export default css`
     color: var(--primaryTextColor);
     text-align: left;
     vertical-align: middle;
+    margin-left: 10px;
   }
 
   .menu-details {
