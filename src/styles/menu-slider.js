@@ -103,7 +103,7 @@ export default css`
     background: var(--menuSliderBg);
   }
   .menu-list li {
-    margin-bottom: 2px;
+    margin-bottom: .2rem;
   }
 
   .content .selected-menu {
@@ -111,6 +111,6 @@ export default css`
     position: absolute;
     width: 98%;
     bottom: 0;
-    top: 40px;
+    top: 4rem;
   }
 `;
