@@ -4,23 +4,18 @@ const menuButtonWidth = css`42px`;
 
 export default css`
 
-  @media (max-width: 500px) {
-    .menu.open {
-      width: 100vw;
-    }
-  }
   .menu {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: var(--menuWidth);
+    width: 100%;
     padding: .5rem .5rem .5rem 0;
     box-sizing: border-box;
     font-size: 1.4rem;
     color: var(--primaryTextColor);
     background: var(--menuSliderBg);
-    transform: translateX(calc(var(--menuWidth) * -1));
+    transform: translateX(calc(100% * -1));
     transition: transform var(--animationTiming) ease-in-out;
   }
   .menu:before {
