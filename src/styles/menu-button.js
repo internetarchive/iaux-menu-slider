@@ -37,12 +37,13 @@ export default css`
     color: var(--primaryTextColor);
     text-align: left;
     vertical-align: middle;
+    margin-left: 1rem;
   }
 
   .menu-details {
     color: var(--primaryTextColor);
     display: inline-block;
-    margin-left: 5px;
+    margin-left: .5rem;
     font-style: italic;
     font-size: 1.5rem;
   }
@@ -51,8 +52,8 @@ export default css`
     position: relative;
     display: inline-flex;
     z-index: 2;
-    width: 42px;
-    height: 42px;
+    width: 4.2rem;
+    height: 4.2rem;
     vertical-align: middle;
     -webkit-box-align: center;
     -ms-flex-align: center;

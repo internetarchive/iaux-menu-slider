@@ -92,18 +92,25 @@ export class IAMenuSlider extends LitElement {
     const actionSection = actionButton
       ? html`<div class="custom-action">${actionButton}</div>`
       : nothing;
+    const headerClass = actionButton ? 'with-secondary-action' : '';
 
     return html`
-      <header>
+      <header class="${headerClass}">
         <div class="details">
           <h3>${label}</h3>
           <span class="extra-details">${menuDetails}</span>
         </div>
         ${actionSection}
-        <button class="close" aria-label="Close this menu" @click=${this.closeMenu}>
-          <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
-        </button>
+        ${this.closeButton}
       </header>
+    `;
+  }
+
+  get closeButton() {
+    return html`
+      <button class="close" aria-label="Close this menu" @click=${this.closeMenu}>
+        <ia-icon-collapse-sidebar></ia-icon-collapse-sidebar>
+      </button>
     `;
   }
 
@@ -111,12 +118,15 @@ export class IAMenuSlider extends LitElement {
   render() {
     return html`
       <div class="menu ${this.sliderDetailsClass}">
-        <ul>
+        ${this.closeButton}
+        <ul class="menu-list">
           ${this.menuItems}
         </ul>
         <div class="content ${this.selectedMenuClass}" @menuTypeSelected=${this.setSelectedMenu}>
           ${this.renderMenuHeader}
-          ${this.selectedMenuComponent}
+          <section class="selected-menu">
+            ${this.selectedMenuComponent}
+          </section>
         </div>
       </div>
     `;

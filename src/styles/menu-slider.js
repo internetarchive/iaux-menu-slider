@@ -3,18 +3,19 @@ import { css } from 'lit-element';
 const menuButtonWidth = css`42px`;
 
 export default css`
+
   .menu {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: var(--menuWidth);
-    padding: .5rem;
+    width: 100%;
+    padding: .5rem .5rem .5rem 0;
     box-sizing: border-box;
     font-size: 1.4rem;
     color: var(--primaryTextColor);
     background: var(--menuSliderBg);
-    transform: translateX(calc(var(--menuWidth) * -1));
+    transform: translateX(calc(100% * -1));
     transition: transform var(--animationTiming) ease-in-out;
   }
   .menu:before {
@@ -41,31 +42,33 @@ export default css`
     cursor: pointer;
   }
 
-  header .details {
-    font-weight: bold;
+  header.with-secondary-action .details {
     width: 80%;
   }
 
+  header .details {
+    font-weight: bold;
+    width: 88%;
+  }
+
   header .custom-action > *,
-  header .close {
+  button.close {
     padding: 0;
     background-color: transparent;
     border: 0;
-    width: var(--iconWidth);
-    height: var(--closeIconHeight);
+    --iconWidth: var(--menuSliderHeaderIconWidth);
+    --iconHeight: var(--menuSliderHeaderIconHeight);
   }
 
   header .custom-action,
-  header .close {
+  button.close {
     position: absolute;
   }
-  header .close {
+  button.close {
     right: .5rem;
-    --iconWidth: var(--closeIconWidth);
-    --iconHeight: var(--closeIconHeight);
   }
 
-  header .close * {
+  button.close * {
     float: right;
   }
 
@@ -76,7 +79,7 @@ export default css`
     bottom: 0;
     left: ${menuButtonWidth};
     z-index: 1;
-    transform: translateX(calc(var(--menuWidth) * -1));
+    transform: translateX(calc(100% * -1));
     transition: transform var(--animationTiming) ease-in-out;
     background: var(--activeButtonBg);
     border-right: .2rem solid;
@@ -88,10 +91,21 @@ export default css`
     transform: translateX(0);
   }
 
-  ul {
+  .menu-list {
     padding: 0;
     margin: 0;
     list-style: none;
     background: var(--menuSliderBg);
+  }
+  .menu-list li {
+    margin-bottom: .2rem;
+  }
+
+  .content .selected-menu {
+    overflow: auto;
+    position: absolute;
+    width: 98%;
+    bottom: 0;
+    top: 4rem;
   }
 `;

@@ -18,8 +18,8 @@
       --primaryTextColor: #fff;
       --menuWidth: 320px;
       --animationTiming: .25s;
-      --closeIconHeight: 20px;
-      --closeIconWidth: 20px;
+      --menuSliderHeaderIconHeight: 20px;
+      --menuSliderHeaderIconWidth: 20px;
       --iconFillColor: #fff;
       --iconStrokeColor: #fff;
       --activeButtonBg: #282828;
@@ -81,7 +81,6 @@
         return css`
           :host {
             display: block;
-            padding: 1.5rem 1rem;
           }
 
           h1 {
@@ -129,7 +128,6 @@
       }
     }
     customElements.define('menu-content', MenuContent);
-
     const menus = [{
       icon: html`
         <ia-icon icon="audio"></ia-icon>
@@ -149,7 +147,7 @@
       component: html`
         <menu-content
           .title='Audio menu'
-          .items=${[1, 2, 3, 4].map(i => `Song ${i}`)}
+          .items=${[...Array(100).keys()].map(i => `Song ${i}`)}
         ></menu-content>
       `,
     }, {
