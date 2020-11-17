@@ -108,4 +108,8 @@ export default css`
     bottom: 0;
     top: 4rem;
   }
+
+  .content .selected-menu > * {
+    display: block;
+  }
 `;
