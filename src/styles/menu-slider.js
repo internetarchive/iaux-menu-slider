@@ -29,6 +29,11 @@ export default css`
     background: var(--menuSliderBg);
   }
 
+  button {
+    outline: none;
+    cursor: pointer;
+  }
+
   header {
     margin: .2rem 0 .5rem 0;
   }
