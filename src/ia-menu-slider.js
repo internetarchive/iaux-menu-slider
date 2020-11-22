@@ -17,6 +17,7 @@ export class IAMenuSlider extends LitElement {
       menus: { type: Array },
       open: { type: Boolean },
       selectedMenu: { type: String },
+      animateMenuOpen: { type: Boolean },
     };
   }
 
@@ -26,6 +27,7 @@ export class IAMenuSlider extends LitElement {
     this.menus = [];
     this.open = false;
     this.selectedMenu = '';
+    this.animateMenuOpen = false;
   }
 
   /**
@@ -61,7 +63,9 @@ export class IAMenuSlider extends LitElement {
   /* render */
 
   get sliderDetailsClass() {
-    return this.open ? 'open' : 'closed';
+    const animate = this.animateMenuOpen ? 'animate' : '';
+    const state = this.open ? 'open' : 'closed';
+    return `${animate} ${state}`;
   }
 
   get selectedMenuClass() {
