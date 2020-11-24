@@ -22,6 +22,12 @@
           "type": "String",
           "description": "Menu item ID property of the currently selected menu item",
           "default": "''"
+        },
+        {
+          "name": "animateMenuOpen",
+          "type": "Boolean",
+          "description": "Toggles open (visible) state of the `.menu` element",
+          "default": "false"
         }
       ],
       "events": [

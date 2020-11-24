@@ -73,7 +73,7 @@ describe('<ia-menu-slider>', () => {
     el.open = true;
     await el.updateComplete;
 
-    expect(el.sliderDetailsClass).to.equal('open');
+    expect(el.sliderDetailsClass).to.contain('open');
   });
 
   it('returns open CSS class when menu is open', async () => {

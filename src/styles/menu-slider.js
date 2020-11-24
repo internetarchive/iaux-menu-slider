@@ -16,7 +16,7 @@ export default css`
     color: var(--primaryTextColor);
     background: var(--menuSliderBg);
     transform: translateX(calc(100% * -1));
-    transition: transform var(--animationTiming) ease-in-out;
+    transition: transform var(--animationTiming) ease-out;
   }
   .menu:before {
     position: absolute;
@@ -27,6 +27,11 @@ export default css`
     width: ${menuButtonWidth};
     content: "";
     background: var(--menuSliderBg);
+  }
+
+  button {
+    outline: none;
+    cursor: pointer;
   }
 
   header {
@@ -80,7 +85,7 @@ export default css`
     left: ${menuButtonWidth};
     z-index: 1;
     transform: translateX(calc(100% * -1));
-    transition: transform var(--animationTiming) ease-in-out;
+    transition: transform var(--animationTiming) ease-out;
     background: var(--activeButtonBg);
     border-right: .2rem solid;
     border-color: var(--subpanelRightBorderColor);
@@ -107,5 +112,9 @@ export default css`
     width: 98%;
     bottom: 0;
     top: 4rem;
+  }
+
+  .content .selected-menu > * {
+    display: block;
   }
 `;
