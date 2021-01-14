@@ -97,7 +97,7 @@ export default css`
     background: var(--activeButtonBg);
     border-right: .2rem solid;
     border-color: var(--subpanelRightBorderColor);
-    padding: .5rem 0 .5rem .5rem;
+    padding: .5rem 0 0 .5rem;
   }
 
   .open {
@@ -115,10 +115,10 @@ export default css`
   }
 
   .content section {
-    height: 96%;
+    height: 97%;
     position: relative;
     width: 100%;
-    padding-bottom: 4%;
+    padding-bottom: 3%;
   }
 
   .content .selected-menu {
