@@ -120,7 +120,6 @@
 
       render() {
         return html`
-          <h1>${this.title}</h1>
           <ul>
             ${this.items.map(this.item)}
           </ul>
@@ -164,7 +163,27 @@
           .items=${[1, 2, 3, 4, 5, 6].map(i => `CD-ROM ${i}`)}
         ></menu-content>
       `,
-    }, {
+    },
+    {
+      icon: html`
+        <ia-icon icon="donate" style="--iconFillColor: #f00"></ia-icon>
+      `,
+      label: 'Very long label that will wrap itself to the next line',
+      id: 'long-label',
+      followable: true,
+      component: html`
+        <menu-content
+          .title='Software menu'
+          .items=${[
+        '1Bacon ipsum dolor amet pork chop spare ribs pork loin, chislic brisket beef ribs pork belly alcatra chicken pork hamburger meatloaf fatback. Pancetta ham hock buffalo salami ground round meatball. Shankle picanha short loin beef meatball prosciutto buffalo corned beef leberkas. Chislic tri-tip boudin pork chop fatback tenderloin frankfurter. Pig beef ribs boudin rump. Andouille doner burgdoggen ham hock short ribs ball tip, corned beef meatloaf tenderloin venison. Brisket bacon drumstick venison chicken boudin.',
+        '2Bacon ipsum dolor amet pork chop spare ribs pork loin, chislic brisket beef ribs pork belly alcatra chicken pork hamburger meatloaf fatback. Pancetta ham hock buffalo salami ground round meatball. Shankle picanha short loin beef meatball prosciutto buffalo corned beef leberkas. Chislic tri-tip boudin pork chop fatback tenderloin frankfurter. Pig beef ribs boudin rump. Andouille doner burgdoggen ham hock short ribs ball tip, corned beef meatloaf tenderloin venison. Brisket bacon drumstick venison chicken boudin.',
+        '3Bacon ipsum dolor amet pork chop spare ribs pork loin, chislic brisket beef ribs pork belly alcatra chicken pork hamburger meatloaf fatback. Pancetta ham hock buffalo salami ground round meatball. Shankle picanha short loin beef meatball prosciutto buffalo corned beef leberkas. Chislic tri-tip boudin pork chop fatback tenderloin frankfurter. Pig beef ribs boudin rump. Andouille doner burgdoggen ham hock short ribs ball tip, corned beef meatloaf tenderloin venison. Brisket bacon drumstick venison chicken boudin.',
+        '4pork loin, chislic brisket beef ribs pork belly alcatra chicken pork hamburger meatloaf fatback. Pancetta ham hock buffalo salami ground round meatball. Shankle picanha short loin beef meatball prosciutto buffalo corned beef leberkas. Chislic tri-tip boudin pork chop fatback tenderloin frankfurter. Pig beef ribs boudin rump. Andouille doner burgdoggen ham hock short ribs ball tip, corned beef meatloaf tenderloin venison. Brisket bacon drumstick venison chicken boudin.',
+        '5pork loin, chislic brisket beef ribs pork belly alcatra chicken pork hamburger meatloaf fatback. Pancetta ham hock buffalo salami ground round meatball. Shankle picanha short loin beef meatball prosciutto buffalo corned beef leberkas. Chislic tri-tip boudin pork chop fatback tenderloin frankfurter. Pig beef ribs boudin rump. Andouille doner burgdoggen ham hock short ribs ball tip, corned beef meatloaf tenderloin venison. Brisket bacon drumstick venison chicken boudin.',
+      ]}
+        ></menu-content>`,
+    },
+    {
       icon: html`
         <ia-icon icon="donate" style="--iconFillColor: #f00"></ia-icon>
       `,
