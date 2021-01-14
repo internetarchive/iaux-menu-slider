@@ -1,6 +1,7 @@
 import { css } from 'lit-element';
 
 const menuButtonWidth = css`42px`;
+const sliderWidth = css`var(--menuWidth, 320px)`;
 
 export default css`
 
@@ -9,13 +10,13 @@ export default css`
     top: 0;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: ${sliderWidth};
     padding: .5rem .5rem .5rem 0;
     box-sizing: border-box;
     font-size: 1.4rem;
     color: var(--primaryTextColor);
     background: var(--menuSliderBg);
-    transform: translateX(calc(100% * -1));
+    transform: translateX(calc(${sliderWidth} * -1));
     transition: transform var(--animationTiming) ease-out;
   }
   .menu:before {
@@ -84,7 +85,7 @@ export default css`
     bottom: 0;
     left: ${menuButtonWidth};
     z-index: 1;
-    transform: translateX(calc(100% * -1));
+    transform: translateX(calc(${sliderWidth} * -1));
     transition: transform var(--animationTiming) ease-out;
     background: var(--activeButtonBg);
     border-right: .2rem solid;
