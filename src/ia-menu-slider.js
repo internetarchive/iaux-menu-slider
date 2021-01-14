@@ -102,7 +102,7 @@ export class IAMenuSlider extends LitElement {
       <header class="${headerClass}">
         <div class="details">
           <h3>${label}</h3>
-          ${menuDetails ? html`<span class="extra-details">${menuDetails}</span>` : nothing}
+          <span class="extra-details">${menuDetails}</span>
         </div>
         ${actionSection}
         ${this.closeButton}
