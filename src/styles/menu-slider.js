@@ -5,13 +5,20 @@ const sliderWidth = css`var(--menuWidth, 320px)`;
 
 export default css`
 
+  .main {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
   .menu {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     width: ${sliderWidth};
-    padding: .5rem .5rem .5rem 0;
+    padding: .5rem .5rem 0 0;
     box-sizing: border-box;
     font-size: 1.4rem;
     color: var(--primaryTextColor);
@@ -107,15 +114,24 @@ export default css`
     margin-bottom: .2rem;
   }
 
+  .content section {
+    height: 96%;
+    position: relative;
+    width: 100%;
+    padding-bottom: 4%;
+  }
+
   .content .selected-menu {
     overflow: auto;
     position: absolute;
-    width: 98%;
-    bottom: 0;
-    top: 4rem;
+    top: 0;
+    width: 100%;
+    padding-bottom: 1rem;
+    height: inherit;
   }
 
   .content .selected-menu > * {
     display: block;
+    padding-bottom: 3rem;
   }
 `;

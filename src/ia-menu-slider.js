@@ -121,6 +121,7 @@ export class IAMenuSlider extends LitElement {
   /** @inheritdoc */
   render() {
     return html`
+      <div class="main">
       <div class="menu ${this.sliderDetailsClass}">
         ${this.closeButton}
         <ul class="menu-list">
@@ -128,10 +129,13 @@ export class IAMenuSlider extends LitElement {
         </ul>
         <div class="content ${this.selectedMenuClass}" @menuTypeSelected=${this.setSelectedMenu}>
           ${this.renderMenuHeader}
-          <section class="selected-menu">
-            ${this.selectedMenuComponent}
+          <section>
+            <div class="selected-menu">
+              ${this.selectedMenuComponent}
+            </div>
           </section>
         </div>
+      </div>
       </div>
     `;
   }
