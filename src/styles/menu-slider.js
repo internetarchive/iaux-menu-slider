@@ -115,10 +115,10 @@ export default css`
   }
 
   .content section {
-    height: 97%;
+    height: 96%;
     position: relative;
     width: 100%;
-    padding-bottom: 3%;
+    padding-bottom: 4%;
   }
 
   .content .selected-menu {
@@ -126,7 +126,7 @@ export default css`
     position: absolute;
     top: 0;
     width: 100%;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     height: inherit;
   }
 
