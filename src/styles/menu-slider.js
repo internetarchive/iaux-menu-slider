@@ -2,6 +2,7 @@ import { css } from 'lit-element';
 
 const menuButtonWidth = css`42px`;
 const sliderWidth = css`var(--menuWidth, 320px)`;
+const transitionTiming = css`var(--animationTiming, 200ms)`;
 
 export default css`
 
@@ -24,7 +25,7 @@ export default css`
     color: var(--primaryTextColor);
     background: var(--menuSliderBg);
     transform: translateX(calc(${sliderWidth} * -1));
-    transition: transform var(--animationTiming) ease-out;
+    transition: transform ${transitionTiming} ease-out;
   }
   .menu:before {
     position: absolute;
@@ -93,7 +94,7 @@ export default css`
     left: ${menuButtonWidth};
     z-index: 1;
     transform: translateX(calc(${sliderWidth} * -1));
-    transition: transform var(--animationTiming) ease-out;
+    transition: transform ${transitionTiming} ease-out;
     background: var(--activeButtonBg);
     border-right: .2rem solid;
     border-color: var(--subpanelRightBorderColor);

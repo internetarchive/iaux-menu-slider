@@ -64,12 +64,12 @@ export class IAMenuSlider extends LitElement {
 
   get sliderDetailsClass() {
     const animate = this.animateMenuOpen ? 'animate' : '';
-    const state = this.open ? 'open' : 'closed';
+    const state = this.open ? 'open' : '';
     return `${animate} ${state}`;
   }
 
   get selectedMenuClass() {
-    return this.selectedMenu ? 'open' : 'closed';
+    return this.selectedMenu ? 'open' : '';
   }
 
   get menuItems() {
