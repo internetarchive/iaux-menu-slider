@@ -38,13 +38,17 @@ export default css`
     background: var(--menuSliderBg);
   }
 
+  .menu > button.close {
+    right: 0.7rem;
+  }
+
   button {
     outline: none;
     cursor: pointer;
   }
 
   header {
-    margin: .2rem 0 .5rem 0;
+    margin: 0 0 .5rem 0;
   }
 
   header * {
