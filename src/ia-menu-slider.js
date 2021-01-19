@@ -29,7 +29,7 @@ export class IAMenuSlider extends LitElement {
     this.open = false;
     this.selectedMenu = '';
     this.animateMenuOpen = false;
-    this.manuallyHandleClose = true;
+    this.manuallyHandleClose = false;
   }
 
   /**
