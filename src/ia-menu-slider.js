@@ -5,7 +5,7 @@ import '@internetarchive/icon-collapse-sidebar/icon-collapse-sidebar.js';
 import './menu-button.js';
 
 const sliderEvents = {
-  closeDrawer: 'ItemNavMenuClosed',
+  closeDrawer: 'menuSliderClosed',
 };
 export class IAMenuSlider extends LitElement {
   static get styles() {
@@ -18,6 +18,7 @@ export class IAMenuSlider extends LitElement {
       open: { type: Boolean },
       selectedMenu: { type: String },
       animateMenuOpen: { type: Boolean },
+      manuallyHandleClose: { type: Boolean },
     };
   }
 
@@ -28,6 +29,7 @@ export class IAMenuSlider extends LitElement {
     this.open = false;
     this.selectedMenu = '';
     this.animateMenuOpen = false;
+    this.manuallyHandleClose = true;
   }
 
   /**
@@ -43,7 +45,9 @@ export class IAMenuSlider extends LitElement {
    * closes menu drawer
    */
   closeMenu() {
-    this.open = false;
+    if (!this.manuallyHandleClose) {
+      this.open = false;
+    }
     const { closeDrawer } = sliderEvents;
     const drawerClosed = new CustomEvent(closeDrawer, {
       detail: this.selectedMenuDetails,
