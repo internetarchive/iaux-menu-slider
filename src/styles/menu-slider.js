@@ -13,6 +13,10 @@ export default css`
     height: 100%;
   }
 
+  .animate {
+    transition: transform ${transitionTiming} ease-out;
+  }
+
   .menu {
     position: absolute;
     top: 0;
@@ -25,8 +29,8 @@ export default css`
     color: var(--primaryTextColor);
     background: var(--menuSliderBg);
     transform: translateX(calc(${sliderWidth} * -1));
-    transition: transform ${transitionTiming} ease-out;
   }
+
   .menu:before {
     position: absolute;
     top: 0;
