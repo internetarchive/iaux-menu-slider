@@ -201,7 +201,13 @@
         console.log('Drawer Closed', event);
         menuOpen = false;
       };
-      const menuSliderElement = html`<ia-menu-slider .menus=${menus} @ItemNavMenuClosed=${closeCB} ?open=${menuOpen}></ia-menu-slider>`;
+      const menuSliderElement = html`
+        <ia-menu-slider
+          .menus=${menus}
+          @ItemNavMenuClosed=${closeCB}
+          ?open=${menuOpen}
+          ?animateMenuOpen=${true}
+        ></ia-menu-slider>`;
 
       const toggleMenu = () => {
         menuOpen = !menuOpen;
