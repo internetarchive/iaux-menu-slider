@@ -204,7 +204,7 @@
       const menuSliderElement = html`
         <ia-menu-slider
           .menus=${menus}
-          @ItemNavMenuClosed=${closeCB}
+          @animateMenuOpen=${closeCB}
           ?open=${menuOpen}
           ?animateMenuOpen=${true}
         ></ia-menu-slider>`;
