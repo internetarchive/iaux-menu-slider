@@ -915,6 +915,13 @@
   dependencies:
     lit-html "^1.2.1"
 
+"@internetarchive/icon-collapse-sidebar@^1.1.0":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-collapse-sidebar/-/icon-collapse-sidebar-1.1.3.tgz#4e3dca753243741273c223302cee545345862d26"
+  integrity sha512-T8jhbq0CGdqAwBKM1fG96MZEnmroXaQ1VBLtcoAyf61FYRN6pBLa2YQxDkaP7+AXASRml2f+nghj04RFY/VlWA==
+  dependencies:
+    lit-html "^1.2.1"
+
 "@internetarchive/icon-donate@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@internetarchive/icon-donate/-/icon-donate-0.3.0.tgz#30551d7d48243abd887338963d376fbf32c77191"
@@ -982,6 +989,13 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@internetarchive/icon-video/-/icon-video-0.3.0.tgz#d0b0d22fe3d88a8a057802503bf00de3fabe744d"
   integrity sha512-a3c33cNU1TXPbeXfrKPasDM8fgPKOzqM9csecJ4lnwswSu05zlLq+WwhkrC6xICgohVQD1DdsYBwdllV4K8V3w==
+  dependencies:
+    lit-html "^1.2.1"
+
+"@internetarchive/icon-volumes@^1.1.0":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@internetarchive/icon-volumes/-/icon-volumes-1.1.3.tgz#4c0feaa20290dc3cb0faacdfbe911990ba52f832"
+  integrity sha512-LwOcIh4IQptxXsvsBROw+6HrkXzbgRw8uP0HkjmaPpg8RLFOeL/ub9AR+st/bYerSoDjQbaSMUSuAJyPDYgpTQ==
   dependencies:
     lit-html "^1.2.1"
 
@@ -5232,9 +5246,9 @@ lodash.uniq@4.5.0, lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.19"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
-  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@2.2.0, log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"
