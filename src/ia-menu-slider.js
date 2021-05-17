@@ -5,7 +5,7 @@ import '@internetarchive/icon-collapse-sidebar/icon-collapse-sidebar.js';
 import './menu-button.js';
 
 const sliderEvents = {
-  closeDrawer: 'ItemNavMenuClosed',
+  closeDrawer: 'menuSliderClosed',
 };
 export class IAMenuSlider extends LitElement {
   static get styles() {
@@ -18,6 +18,7 @@ export class IAMenuSlider extends LitElement {
       open: { type: Boolean },
       selectedMenu: { type: String },
       animateMenuOpen: { type: Boolean },
+      manuallyHandleClose: { type: Boolean },
     };
   }
 
@@ -28,6 +29,7 @@ export class IAMenuSlider extends LitElement {
     this.open = false;
     this.selectedMenu = '';
     this.animateMenuOpen = false;
+    this.manuallyHandleClose = false;
   }
 
   /**
@@ -43,7 +45,9 @@ export class IAMenuSlider extends LitElement {
    * closes menu drawer
    */
   closeMenu() {
-    this.open = false;
+    if (!this.manuallyHandleClose) {
+      this.open = false;
+    }
     const { closeDrawer } = sliderEvents;
     const drawerClosed = new CustomEvent(closeDrawer, {
       detail: this.selectedMenuDetails,
@@ -64,12 +68,12 @@ export class IAMenuSlider extends LitElement {
 
   get sliderDetailsClass() {
     const animate = this.animateMenuOpen ? 'animate' : '';
-    const state = this.open ? 'open' : 'closed';
+    const state = this.open ? 'open' : '';
     return `${animate} ${state}`;
   }
 
   get selectedMenuClass() {
-    return this.selectedMenu ? 'open' : 'closed';
+    return this.selectedMenu ? 'open' : '';
   }
 
   get menuItems() {
@@ -121,6 +125,7 @@ export class IAMenuSlider extends LitElement {
   /** @inheritdoc */
   render() {
     return html`
+      <div class="main">
       <div class="menu ${this.sliderDetailsClass}">
         ${this.closeButton}
         <ul class="menu-list">
@@ -128,10 +133,13 @@ export class IAMenuSlider extends LitElement {
         </ul>
         <div class="content ${this.selectedMenuClass}" @menuTypeSelected=${this.setSelectedMenu}>
           ${this.renderMenuHeader}
-          <section class="selected-menu">
-            ${this.selectedMenuComponent}
+          <section>
+            <div class="selected-menu">
+              ${this.selectedMenuComponent}
+            </div>
           </section>
         </div>
+      </div>
       </div>
     `;
   }

@@ -1,23 +1,36 @@
 import { css } from 'lit-element';
 
 const menuButtonWidth = css`42px`;
+const sliderWidth = css`var(--menuWidth, 320px)`;
+const transitionTiming = css`var(--animationTiming, 200ms)`;
 
 export default css`
+
+  .main {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .animate {
+    transition: transform ${transitionTiming} ease-out;
+  }
 
   .menu {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 100%;
-    padding: .5rem .5rem .5rem 0;
+    width: ${sliderWidth};
+    padding: .5rem .5rem 0 0;
     box-sizing: border-box;
     font-size: 1.4rem;
     color: var(--primaryTextColor);
     background: var(--menuSliderBg);
-    transform: translateX(calc(100% * -1));
-    transition: transform var(--animationTiming) ease-out;
+    transform: translateX(calc(${sliderWidth} * -1));
   }
+
   .menu:before {
     position: absolute;
     top: 0;
@@ -29,13 +42,17 @@ export default css`
     background: var(--menuSliderBg);
   }
 
+  .menu > button.close {
+    right: 0.7rem;
+  }
+
   button {
     outline: none;
     cursor: pointer;
   }
 
   header {
-    margin: .2rem 0 .5rem 0;
+    margin: 0 0 .5rem 0;
   }
 
   header * {
@@ -84,12 +101,12 @@ export default css`
     bottom: 0;
     left: ${menuButtonWidth};
     z-index: 1;
-    transform: translateX(calc(100% * -1));
-    transition: transform var(--animationTiming) ease-out;
+    transform: translateX(calc(${sliderWidth} * -1));
+    transition: transform ${transitionTiming} ease-out;
     background: var(--activeButtonBg);
     border-right: .2rem solid;
     border-color: var(--subpanelRightBorderColor);
-    padding: .5rem 0 .5rem .5rem;
+    padding: .5rem 0 0 .5rem;
   }
 
   .open {
@@ -106,15 +123,23 @@ export default css`
     margin-bottom: .2rem;
   }
 
+  .content section {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+
   .content .selected-menu {
     overflow: auto;
     position: absolute;
-    width: 98%;
-    bottom: 0;
-    top: 4rem;
+    top: 0;
+    width: 100%;
+    padding-bottom: 2rem;
+    height: inherit;
   }
 
   .content .selected-menu > * {
     display: block;
+    padding-bottom: 3rem;
   }
 `;
