@@ -16,6 +16,7 @@ export class IAMenuSlider extends LitElement {
     return {
       menus: { type: Array },
       open: { type: Boolean },
+      manuallyHandleClose: { type: Boolean },
       selectedMenu: { type: String },
       selectedMenuAction: { type: Object },
       animateMenuOpen: { type: Boolean },
