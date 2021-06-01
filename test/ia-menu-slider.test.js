@@ -146,129 +146,130 @@ describe('<ia-menu-slider>', () => {
 
     expect(el.selectedMenu).to.not.equal(menus[2].id);
   });
-});
 
-describe('Menu list', async () => {
-  const el = await fixture(container(menus));
-  const menuList = el
-    .shadowRoot
-    .querySelectorAll('menu-button');
+  describe('Menu list', async () => {
+    const el = await fixture(container(menus));
+    const menuList = el
+      .shadowRoot
+      .querySelectorAll('menu-button');
 
-  it('shows menu details when available', () => {
-    const firstMenuItem = menuList[0].shadowRoot.querySelector('.menu-details');
-    expect(firstMenuItem.innerText).to.equal(menus[0].menuDetails);
+    it('shows menu details when available', () => {
+      const firstMenuItem = menuList[0].shadowRoot.querySelector('.menu-details');
+      expect(firstMenuItem.innerText).to.equal(menus[0].menuDetails);
 
-    const secondMenuItem = menuList[1].shadowRoot.querySelector('.menu-details');
-    expect(secondMenuItem.innerText).to.be.empty;
-  });
-});
-
-describe('Header section', async () => {
-  let extraButtonClicked = false;
-  const extraActionClickHandler = () => {
-    extraButtonClicked = true;
-  };
-  const menu = {
-    icon: html`<ia-icon icon="audio"></ia-icon>`,
-    title: 'Audio Menu',
-    menuDetails: '(100,000,000 tracks)',
-    actionButton: html`
-      <button
-        style='color: white;'
-        @click=${extraActionClickHandler}
-      >Foo</button>
-    `,
-    label: 'Audio',
-    id: 'audio',
-    component: html`
-      <h1>Menu 2</h1>
-    `,
-  };
-  const el = await fixture(container([menu]));
-
-  // open menu
-  el
-    .shadowRoot
-    .querySelectorAll('menu-button')[0]
-    .shadowRoot
-    .querySelector('button')
-    .click();
-
-  await el.updateComplete;
-  const menuHeader = el.shadowRoot.querySelector('.content header');
-
-  // display
-  it('creates a header section', () => {
-    expect(menuHeader).to.not.be.undefined;
-  });
-  it('adds header title and description', () => {
-    const title = menuHeader.querySelector('h3');
-    expect(title).to.not.be.undefined;
-    expect(title.innerText).to.equal(menu.label);
-
-    const description = menuHeader.querySelector('.extra-details');
-    expect(description).to.not.be.undefined;
-    expect(description.innerText).to.equal(menu.menuDetails);
-  });
-
-  it('has a close button by default', async () => {
-    const closeButton = menuHeader.querySelector('.close');
-    expect(closeButton).to.not.be.undefined;
-  });
-  it('has an option for a menu specific action button', () => {
-    const actionButton = menuHeader.querySelector('.custom-action');
-    expect(actionButton).to.not.be.undefined;
-  });
-
-  // custom action
-  it('can click on the custom action', async () => {
-    const actionButton = menuHeader.querySelector('.custom-action > *');
-    expect(extraButtonClicked).to.be.false; // has not been clicked
-    const actionClick = new MouseEvent('click');
-    actionButton.dispatchEvent(actionClick);
-    await el.updateComplete;
-    expect(extraButtonClicked).to.be.true;
-  });
-
-  // close action
-  it('emits a custom event when the drawer closes', async () => {
-    const closeButton = menuHeader.querySelector('button.close');
-    closeButton.dispatchEvent(new MouseEvent('click'));
-    await el.updateComplete;
-    expect(el.open).to.be.false;
-  });
-
-  describe('Animation toggles for primary open/close state', async () => {
-    const thisMenu = await fixture(container(menus));
-
-    it('does not automatically animate menu', () => {
-      expect(thisMenu.animateMenuOpen).to.be.false;
+      const secondMenuItem = menuList[1].shadowRoot.querySelector('.menu-details');
+      expect(secondMenuItem.innerText).to.be.empty;
     });
+  });
 
-    it('uses `animate` class to power transition when turned on', async () => {
-      thisMenu.animateMenuOpen = true;
+  describe('Header section', () => {
+    let extraButtonClicked = false;
+    const extraActionClickHandler = () => {
+      extraButtonClicked = true;
+    };
+    const menu = {
+      icon: html`<ia-icon icon="audio"></ia-icon>`,
+      title: 'Audio Menu',
+      menuDetails: '(100,000,000 tracks)',
+      actionButton: html`
+        <button
+          id="custom-action-button"
+          style='color: white;'
+          @click=${extraActionClickHandler}
+        >Foo</button>
+      `,
+      label: 'Audio',
+      id: 'audio',
+      component: html`
+        <h1>Menu 2</h1>
+      `,
+    };
+
+    it('creates a header section', async () => {
+      const el = await fixture(container([menu]));
+      el
+        .shadowRoot
+        .querySelectorAll('menu-button')[0]
+        .shadowRoot
+        .querySelector('button')
+        .click();
       await el.updateComplete;
 
-      expect(thisMenu.shadowRoot.querySelector('.menu.animate').classList.contains('animate')).to.be.true;
+      const menuHeader = el.shadowRoot.querySelector('.content header');
+      expect(menuHeader).to.not.be.undefined;
+
+      const title = menuHeader.querySelector('h3');
+      expect(title).to.not.be.undefined;
+      expect(title.innerText).to.equal(menu.label);
+
+      const description = menuHeader.querySelector('.extra-details');
+      expect(description).to.not.be.undefined;
+      expect(description.innerText).to.equal(menu.menuDetails);
+
+      const closeButton = menuHeader.querySelector('.close');
+      expect(closeButton).to.not.be.undefined;
+
+      const actionButton = menuHeader.querySelector('.custom-action');
+      expect(actionButton).to.not.be.undefined;
+    });
+
+    it('can click on the custom action', async () => {
+      const el = await fixture(container([menu]));
+      el
+        .shadowRoot
+        .querySelectorAll('menu-button')[0]
+        .shadowRoot
+        .querySelector('button')
+        .click();
+      await el.updateComplete;
+
+      const menuHeader = el.shadowRoot.querySelector('.content header');
+      const actionButton = menuHeader.querySelector('.custom-action > *');
+      expect(el.selectedMenuAction).to.not.be.undefined;
+      expect(extraButtonClicked).to.be.false; // has not been clicked
+
+      const actionClick = new MouseEvent('click');
+      actionButton.dispatchEvent(actionClick);
+      await el.updateComplete;
+      expect(extraButtonClicked).to.be.true;
     });
   });
 
-  describe('Menu close behavior', async () => {
-    const thisMenu = await fixture(container(menus));
+  describe('Close behavior', () => {
+    it('emits a custom event when the drawer closes', async () => {
+      const el = await fixture(container(menus));
+      el.open = true;
+      await el.updateComplete;
+      expect(el.open).to.be.true;
 
-    it('has property: `manuallyHandleClose`', () => {
-      expect(thisMenu.manuallyHandleClose).to.exist;
+      const menuHeader = el.shadowRoot.querySelector('.content header');
+      const closeButton = menuHeader.querySelector('button.close');
+      closeButton.dispatchEvent(new MouseEvent('click'));
+      await el.updateComplete;
+      expect(el.open).to.be.false;
     });
+    it('emits event but does not close drawer if prop `manuallyHandleClose = true`', async () => {
+      let sliderEmittedEvent = false;
+      const el = await fixture(container(menus));
+      el.manuallyHandleClose = true;
+      el.open = true;
+      await el.updateComplete;
 
-    thisMenu.manuallyHandleClose = true;
-    thisMenu.open = true;
-    const closebutton = thisMenu.shadowRoot.querySelector('button.close');
-    closebutton.click();
-    await el.updateComplete;
-    closebutton;
-    it('does not manually close menu when property is set: `manuallyHandleClose`', () => {
-      expect(thisMenu.manuallyHandleClose).to.be.true;
-      expect(thisMenu.open).to.be.true;
+      // confirm base config
+      expect(el.open).to.be.true;
+      expect(sliderEmittedEvent).to.be.false;
+
+      el.addEventListener('menuSliderClosed', () => {
+        sliderEmittedEvent = true;
+      });
+
+      const menuHeader = el.shadowRoot.querySelector('.content header');
+      const closeButton = menuHeader.querySelector('button.close');
+      closeButton.dispatchEvent(new MouseEvent('click'));
+      await el.updateComplete;
+
+      expect(sliderEmittedEvent).to.be.true; // handler received click event
+      expect(el.open).to.be.true; // open state is still active, does not close
     });
   });
 });
