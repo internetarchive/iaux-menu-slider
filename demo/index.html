@@ -45,6 +45,7 @@
 
     section {
       position: relative;
+      width: 320px;
     }
   </style>
 </head>
@@ -129,7 +130,7 @@
     let showPrimary = true;
     const primaryActionButton = html`
         <button
-          style='color: white;'
+        style='--iconFillColor: aquamarine;'
           @click=${e => extraActionClickHandler(e)}
         >
           <ia-icon-volumes></ia-icon-volumes>
@@ -137,10 +138,10 @@
       `;
     const secondaryActionButton = html`
         <button
-          style='color: white;'
+          style='--iconFillColor: red;'
           @click=${e => extraActionClickHandler(e)}
         >
-          <ia-icon icon="software"></ia-icon>
+          <ia-icon-volumes></ia-icon-volumes>
         </button>
       `;
 customElements.define('menu-content', MenuContent);
