@@ -45,6 +45,7 @@
 
     section {
       position: relative;
+      width: 320px;
     }
   </style>
 </head>
@@ -127,20 +128,31 @@
       }
     }
     customElements.define('menu-content', MenuContent);
-    const menus = [{
+
+    let showPrimary = true;
+    const primaryActionButton = html`
+        <button
+        style='--iconFillColor: aquamarine;'
+          @click=${e => extraActionClickHandler(e)}
+        >
+          <ia-icon-volumes></ia-icon-volumes>
+        </button>
+      `;
+    const secondaryActionButton = html`
+        <button
+          style='--iconFillColor: red;'
+          @click=${e => extraActionClickHandler(e)}
+        >
+          <ia-icon-volumes></ia-icon-volumes>
+        </button>
+      `;
+    let menus = [{
       icon: html`
         <ia-icon icon="audio"></ia-icon>
       `,
       title: 'Audio Menu',
       menuDetails: '(100,000,000 tracks)',
-      actionButton: html`
-        <button
-          style='color: white;'
-          @click=${e => console.log('CLICK EXTRA ACTION', e)}
-        >
-          <ia-icon-volumes></ia-icon-volumes>
-        </button>
-      `,
+      actionButton: primaryActionButton,
       label: 'Audio',
       id: 'audio',
       component: html`
@@ -194,6 +206,18 @@
       followable: true,
       href: '#',
     }];
+
+    function extraActionClickHandler(e) {
+      const audio = menus.find(m => m.title === 'Audio Menu');
+      showPrimary = !showPrimary;
+
+      audio.actionButton = showPrimary ? primaryActionButton : secondaryActionButton;
+      const newMenus = menus;
+      menus = [...newMenus];
+
+      const menuSlider = document.querySelector('ia-menu-slider');
+      menuSlider.menus = menus;
+    }
 
     (function toggleScope() {
       let menuOpen = false;

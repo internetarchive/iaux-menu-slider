@@ -16,7 +16,9 @@ export class IAMenuSlider extends LitElement {
     return {
       menus: { type: Array },
       open: { type: Boolean },
+      manuallyHandleClose: { type: Boolean },
       selectedMenu: { type: String },
+      selectedMenuAction: { type: Object },
       animateMenuOpen: { type: Boolean },
       manuallyHandleClose: { type: Boolean },
     };
@@ -28,8 +30,17 @@ export class IAMenuSlider extends LitElement {
     this.menus = [];
     this.open = false;
     this.selectedMenu = '';
+    this.selectedMenuAction = nothing;
     this.animateMenuOpen = false;
     this.manuallyHandleClose = false;
+  }
+
+  updated() {
+    const { actionButton } = this.selectedMenuDetails || {};
+    const actionButtonHasChanged = actionButton !== this.selectedMenuAction;
+    if (actionButtonHasChanged) {
+      this.selectedMenuAction = actionButton || nothing;
+    }
   }
 
   /**
@@ -39,6 +50,8 @@ export class IAMenuSlider extends LitElement {
   setSelectedMenu({ detail }) {
     const { id } = detail;
     this.selectedMenu = this.selectedMenu === id ? '' : id;
+    const { actionButton } = this.selectedMenuDetails || {};
+    this.selectedMenuAction = actionButton || nothing;
   }
 
   /**
@@ -56,7 +69,8 @@ export class IAMenuSlider extends LitElement {
   }
 
   get selectedMenuDetails() {
-    return this.menus.find(menu => menu.id === this.selectedMenu);
+    const selectedMenu = this.menus.find(menu => menu.id === this.selectedMenu);
+    return selectedMenu;
   }
 
   get selectedMenuComponent() {
@@ -96,19 +110,18 @@ export class IAMenuSlider extends LitElement {
   }
 
   get renderMenuHeader() {
-    const { label = '', menuDetails = '', actionButton } = this.selectedMenuDetails || {};
-    const actionSection = actionButton
-      ? html`<div class="custom-action">${actionButton}</div>`
+    const { label = '', menuDetails = '' } = this.selectedMenuDetails || {};
+    const headerClass = this.selectedMenuAction ? 'with-secondary-action' : '';
+    const actionBlock = this.selectedMenuAction
+      ? html`<span class="custom-action">${this.selectedMenuAction}</span>`
       : nothing;
-    const headerClass = actionButton ? 'with-secondary-action' : '';
-
     return html`
       <header class="${headerClass}">
         <div class="details">
           <h3>${label}</h3>
           <span class="extra-details">${menuDetails}</span>
         </div>
-        ${actionSection}
+        ${actionBlock}
         ${this.closeButton}
       </header>
     `;
