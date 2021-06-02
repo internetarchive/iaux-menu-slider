@@ -127,6 +127,8 @@
         `;
       }
     }
+    customElements.define('menu-content', MenuContent);
+
     let showPrimary = true;
     const primaryActionButton = html`
         <button
@@ -144,7 +146,6 @@
           <ia-icon-volumes></ia-icon-volumes>
         </button>
       `;
-customElements.define('menu-content', MenuContent);
     let menus = [{
       icon: html`
         <ia-icon icon="audio"></ia-icon>
