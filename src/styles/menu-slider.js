@@ -8,7 +8,6 @@ export default css`
 
   .main {
     overflow: hidden;
-    position: relative;
     width: 100%;
     height: 100%;
   }
@@ -29,17 +28,6 @@ export default css`
     color: var(--primaryTextColor);
     background: var(--menuSliderBg);
     transform: translateX(calc(${sliderWidth} * -1));
-  }
-
-  .menu:before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    width: ${menuButtonWidth};
-    content: "";
-    background: var(--menuSliderBg);
   }
 
   .menu > button.close {
@@ -131,15 +119,13 @@ export default css`
 
   .content .selected-menu {
     overflow: auto;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding-bottom: 2rem;
     height: inherit;
+    position: relative;
   }
 
   .content .selected-menu > * {
     display: block;
     padding-bottom: 3rem;
+    position: relative;
   }
 `;
