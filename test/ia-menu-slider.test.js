@@ -1,7 +1,5 @@
 import { html, fixture, expect } from '@open-wc/testing';
-import { IAMenuSlider } from '../src/ia-menu-slider.js';
-
-customElements.define('ia-menu-slider', IAMenuSlider);
+import '../src/ia-menu-slider.js';
 
 const container = (menus = []) => (
   html`<ia-menu-slider .menus=${menus}></ia-menu-slider>`

@@ -20,7 +20,6 @@ export class IAMenuSlider extends LitElement {
       selectedMenu: { type: String },
       selectedMenuAction: { type: Object },
       animateMenuOpen: { type: Boolean },
-      manuallyHandleClose: { type: Boolean },
     };
   }
 
@@ -157,3 +156,5 @@ export class IAMenuSlider extends LitElement {
     `;
   }
 }
+
+window.customElements.define('ia-menu-slider', IAMenuSlider);
