@@ -1,5 +1,5 @@
-import { nothing } from 'lit-html';
-import { LitElement, html } from 'lit-element';
+import { nothing } from 'lit/html.js';
+import { LitElement, html } from 'lit';
 import menuSliderCSS from './styles/menu-slider.js';
 import '@internetarchive/icon-collapse-sidebar/icon-collapse-sidebar.js';
 import './menu-button.js';

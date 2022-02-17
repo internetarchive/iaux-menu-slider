@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css } from 'lit';
 
 const menuButtonWidth = css`42px`;
 const sliderWidth = css`var(--menuWidth, 320px)`;

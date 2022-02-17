@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit-element';
+import { html, LitElement } from 'lit';
 import menuButtonCSS from './styles/menu-button.js';
 
 class MenuButton extends LitElement {
