@@ -23,6 +23,8 @@
       --iconFillColor: #fff;
       --iconStrokeColor: #fff;
       --activeButtonBg: #282828;
+      --iconWidth: 24px;
+      --iconHeight: 24px;
     }
 
     html {
@@ -59,9 +61,9 @@
   </main>
 
   <script type="module">
-    /* eslint-disable max-classes-per-file, import/no-extraneous-dependencies, no-console */
-    import { render } from 'lit-html';
-    import { html, css, LitElement } from 'lit-element';
+    /* eslint-disable max-classes-per-file, import/no-extraneous-dependencies, no-console, no-use-before-define, class-methods-use-this */
+    import { render } from 'lit/html.js';
+    import { html, css, LitElement } from 'lit';
     import IAIcons from '@internetarchive/ia-icons';
     import '@internetarchive/icon-volumes/icon-volumes.js';
     import '../ia-menu-slider.js';
@@ -225,12 +227,13 @@
         console.log('Drawer Closed', event);
         menuOpen = false;
       };
+      const animateMenu = true;
       const menuSliderElement = html`
         <ia-menu-slider
           .menus=${menus}
           @animateMenuOpen=${closeCB}
           ?open=${menuOpen}
-          ?animateMenuOpen=${true}
+          ?animateMenuOpen=${animateMenu}
         ></ia-menu-slider>`;
 
       const toggleMenu = () => {

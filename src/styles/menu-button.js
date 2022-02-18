@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css } from 'lit';
 
 export default css`
   a {
@@ -52,7 +52,8 @@ export default css`
     position: relative;
     display: inline-flex;
     z-index: 2;
-    width: 4.2rem;
+    min-width: 4.2rem;
+    max-width: 4.2rem;
     height: 4.2rem;
     vertical-align: middle;
     -webkit-box-align: center;
