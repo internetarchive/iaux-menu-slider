@@ -107,9 +107,9 @@ describe('<ia-menu-slider>', () => {
     const icon1 = icons[0].shadowRoot.querySelector('#icon-1');
     const icon2 = icons[1].shadowRoot.querySelector('b');
 
-    expect(icons).to.not.be.undefined;
-    expect(icon1).to.not.be.undefined;
-    expect(icon2).to.not.be.undefined;
+    expect(icons).to.exist;
+    expect(icon1).to.exist;
+    expect(icon2).to.exist;
   });
 
   it('renders the menu component when menu button clicked', async () => {
