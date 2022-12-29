@@ -64,20 +64,9 @@
     /* eslint-disable max-classes-per-file, import/no-extraneous-dependencies, no-console, no-use-before-define, class-methods-use-this */
     import { render } from 'lit/html.js';
     import { html, css, LitElement } from 'lit';
-    import IAIcons from '@internetarchive/ia-icons';
+    import '@internetarchive/ia-icons';
     import '@internetarchive/icon-volumes/icon-volumes.js';
     import '../ia-menu-slider.js';
-
-    customElements.define('ia-icon', class extends IAIcons {
-      static get styles() {
-        return [css`
-          svg {
-            width: 40px;
-            height: 40px;
-          }
-        `, IAIcons.styles];
-      }
-    });
 
     class MenuContent extends LitElement {
       static get styles() {
