@@ -1,3 +1,5 @@
+# Deprecated. see: https://github.com/internetarchive/iaux-item-navigator/pull/11
+
 [![Build Status](https://travis-ci.com/internetarchive/iaux-donation-form.svg?branch=master)](https://travis-ci.com/internetarchive/iaux-menu-slider)
 [![codecov](https://codecov.io/gh/internetarchive/iaux-donation-form/branch/master/graph/badge.svg)](https://codecov.io/gh/internetarchive/iaux-menu-slider)
 
